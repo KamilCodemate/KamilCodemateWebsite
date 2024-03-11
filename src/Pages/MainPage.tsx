@@ -2,6 +2,7 @@ import React from 'react';
 import './PageStyles/MainPage.scss';
 import LaptopImage from '../images/hero-laptop.jpg';
 import { MdWeb } from 'react-icons/md';
+import ServiceCard from '../Components/ServiceCard';
 import MainNavbar from '../Components/MainNavbar';
 const MainPage: React.FC = () => {
   return (
@@ -28,13 +29,7 @@ const MainPage: React.FC = () => {
         </div>
         <div id='services-cards'>
           <div className='service-row service-first-row'>
-            <div className='card'>
-              <div className='card-icon'>
-                <MdWeb size={80} />
-              </div>
-              <div className='card-title'>Tworzenie witryn od podstaw</div>
-              <div className='card-description'>Zbudujemy dla Ciebie witrynę interetową zupełnie od nowa</div>
-            </div>
+            <ServiceCard title='Strony internetowe' description='Tworzymy nowoczesne i responsywne strony internetowe' icon={MdWeb} />
           </div>
           <div className='service-row service-second-row'> </div>
         </div>

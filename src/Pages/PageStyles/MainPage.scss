@@ -6,29 +6,7 @@
   padding: 0;
   font-family: 'Poppins', sans-serif;
 }
-.main-navbar {
-  background-color: black;
-  color: white;
-  height: 80px;
-  padding-left: 50px;
-  padding-right: 50px;
-  display: flex;
-  justify-content: space-between;
 
-  .navbar-logo {
-    padding-top: 10px;
-    font-weight: 600;
-    font-size: 35px;
-  }
-  .navbar-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    font-size: 20px;
-    font-weight: 500;
-  }
-}
 .hero {
   height: calc(100vh - 80px);
   background-color: black;
@@ -107,40 +85,5 @@
     width: 100%;
     height: 250px;
     padding: 0 50px 0 50px;
-    .card {
-      text-align: center;
-      width: 31vw;
-      height: 100%;
-
-      .card-icon {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .card-title {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 10px;
-        font-size: 30px;
-        font-weight: bold;
-        color: black;
-      }
-      .card-description {
-        width: 100%;
-        padding: 0 10% 0 10%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 10px;
-        font-size: 20px;
-        color: rgb(66, 66, 66);
-        text-align: center;
-        font-size: 17px;
-        font-weight: bold;
-      }
-    }
   }
 }
