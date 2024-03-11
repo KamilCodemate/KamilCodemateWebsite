@@ -4,6 +4,11 @@ import LaptopImage from '../images/hero-laptop.jpg';
 import { MdWeb } from 'react-icons/md';
 import ServiceCard from '../Components/ServiceCard';
 import MainNavbar from '../Components/MainNavbar';
+import { ImNewTab } from 'react-icons/im';
+import { IoPodiumOutline } from 'react-icons/io5';
+import { GoShieldCheck } from 'react-icons/go';
+import { FaChartLine } from 'react-icons/fa6';
+import { DiStreamline } from 'react-icons/di';
 const MainPage: React.FC = () => {
   return (
     <div className='container'>
@@ -29,9 +34,32 @@ const MainPage: React.FC = () => {
         </div>
         <div id='services-cards'>
           <div className='service-row service-first-row'>
-            <ServiceCard title='Strony internetowe' description='Tworzymy nowoczesne i responsywne strony internetowe' icon={MdWeb} />
+            <ServiceCard
+              title='Tworzenie witryn od podstaw'
+              description='Zbudujemy dla Ciebie witrynę od podstaw, zgodną z Twoimi oczekiwaniami.'
+              icon={MdWeb}
+            />
+            <ServiceCard
+              title='Aktualizacja starych witryn'
+              description='Jeżeli masz już witrynę i pragniesz ją unowocześnić, dobrze trafiłeś.'
+              icon={ImNewTab}
+            />
+            <ServiceCard title='Pozycjonowanie' description='Zadbamy o to, aby Twoja witryna była powszechnie odwiedzana.' icon={IoPodiumOutline} />
           </div>
-          <div className='service-row service-second-row'> </div>
+
+          <div className='service-row service-second-row'>
+            <ServiceCard
+              title='Stała opieka nad stroną'
+              description='Będziemy pod ręką, kiedy będziesz chciał zaktualizować swoją witrynę.'
+              icon={GoShieldCheck}
+            />
+            <ServiceCard title='Kampanie Google Ads' description='W efektywny sposób rozreklamujemy Twoją witrynę.' icon={FaChartLine} />{' '}
+            <ServiceCard
+              title='Systemy back-end'
+              description='Sklepy internetowe, panele użytkownika, blogi. Zajmiemy się tym.'
+              icon={DiStreamline}
+            />{' '}
+          </div>
         </div>
       </div>
     </div>
