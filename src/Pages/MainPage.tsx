@@ -1,5 +1,6 @@
 import React from 'react';
 import './PageStyles/MainPage.scss';
+import LaptopImage from '../images/hero-laptop.jpg';
 const MainPage: React.FC = () => {
   return (
     <div className='container'>
@@ -13,8 +14,17 @@ const MainPage: React.FC = () => {
         </div>
       </div>
       <div className='hero'>
-        <div id='hero-left-col'></div>
-        <div id='hero-right-col'></div>
+        <div id='hero-left-col'>
+          <div id='hero-left-col-main-content'>
+            <span id='hero-title'>Profesjonalne witryny i serwisy internetowe</span>
+            <div id='hero-button'>
+              <button>Zamów darmową wycenę</button>
+            </div>
+          </div>
+        </div>
+        <div id='hero-right-col'>
+          <img src={LaptopImage} alt='laptop' />
+        </div>
       </div>
     </div>
   );
