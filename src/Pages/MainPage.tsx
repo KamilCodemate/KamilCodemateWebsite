@@ -62,6 +62,7 @@ const MainPage: React.FC = () => {
           </div>
         </div>
       </div>
+      <div className='how-it-works'></div>
     </div>
   );
 };
