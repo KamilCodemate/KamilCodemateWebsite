@@ -9,6 +9,7 @@ import { IoPodiumOutline } from 'react-icons/io5';
 import { GoShieldCheck } from 'react-icons/go';
 import { FaChartLine } from 'react-icons/fa6';
 import { DiStreamline } from 'react-icons/di';
+
 const MainPage: React.FC = () => {
   return (
     <div className='container'>
@@ -28,9 +29,9 @@ const MainPage: React.FC = () => {
         M
       </div>
       <div id='services'>
-        <div id='services-title'>
-          <span id='first-services-title'>Nasze usługi</span>
-          <span id='second-services-title'>Zobacz, z czym możemy Ci pomóc</span>
+        <div className='section-title'>
+          <span className='first-section-title blacked'>Nasze usługi</span>
+          <span className='second-section-title blacked'>Zobacz, z czym możemy Ci pomóc</span>
         </div>
         <div id='services-cards'>
           <div className='service-row service-first-row'>
@@ -62,7 +63,30 @@ const MainPage: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className='how-it-works'></div>
+      <div id='how-it-works'>
+        <div className='section-title'>
+          <span className='first-section-title whitened'>Nasze usługi</span>
+          <span className='second-section-title whitened'>Zobacz, z czym możemy Ci pomóc</span>
+        </div>
+        <div className='colums'>
+          <div className='column left-column'>
+            <div className='desc-field left'>
+              <div className='desc-field-number'>1</div>
+              <div className='desc-field-title'>Ustalenie kryteriów</div>
+              <div className='desc-field-description'>
+                Ustalimy dokładnie, czego potrzebuje Twoja witryna. Jeżeli masz określone preferencje wizualne, może je określić. W przeciągu kilku
+                dni przygotujemy projekt wizualny stony, aby mieć pewność, że Twoja przyszła strona na pewno Cię zadowoli.
+              </div>
+            </div>
+          </div>
+          <div className='column middle-column'>
+            <div className="middle-line-wrapper">
+              <div className="middle-line"></div>
+            </div>
+          </div>
+          <div className='column right-column'></div>
+        </div>
+      </div>
     </div>
   );
 };
