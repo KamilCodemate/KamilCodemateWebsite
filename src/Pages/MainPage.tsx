@@ -68,6 +68,15 @@ const MainPage: React.FC = () => {
           <span className='first-section-title whitened'>Jak to działa?</span>
           <span className='second-section-title whitened'>Zobacz, jak wyglądać będzie nasza współpraca</span>
         </div>
+        <div className='steps-root'>
+          <div className='steps'>
+            <div className='step'></div>
+            <div className='arrow'></div>
+            <div className='step'></div>
+            <div className='arrow'></div>
+            <div className='step'></div>
+          </div>
+        </div>
       </div>
     </div>
   );
