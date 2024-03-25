@@ -79,60 +79,6 @@
   background-color: black;
   display: flex;
   flex-direction: column;
-
-  .colums {
-    display: grid;
-    grid-template-columns: calc(50% - 2px) 4px calc(50% - 2px);
-    width: 100%;
-    height: 100%;
-    .column {
-      height: 100%;
-
-      display: flex;
-    }
-    .column.middle-column {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      .middle-line-wrapper {
-        height: 100%;
-        width: 100%;
-        background-color: white;
-        position: relative;
-        bottom: 20px;
-        border-radius: 10px;
-
-        .middle-line {
-          width: 100%;
-          height: 33%;
-          background-color: #ff4000;
-          box-shadow: 0 0 5px #ff4000;
-          border-radius: 10px;
-          position: relative;
-          top: 60px;
-        }
-      }
-    }
-    .column.left-column {
-      padding-left: 50px;
-    }
-  }
-  .desc-field {
-    display: flex;
-    flex-direction: column;
-    color: white;
-
-    .desc-field-number {
-      font-size: 40px;
-      font-weight: 600;
-    }
-    .desc-field-title {
-      font-size: 30px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-  }
 }
 
 .section-title {

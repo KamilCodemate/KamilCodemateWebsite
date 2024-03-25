@@ -65,26 +65,8 @@ const MainPage: React.FC = () => {
       </div>
       <div id='how-it-works'>
         <div className='section-title'>
-          <span className='first-section-title whitened'>Nasze usługi</span>
-          <span className='second-section-title whitened'>Zobacz, z czym możemy Ci pomóc</span>
-        </div>
-        <div className='colums'>
-          <div className='column left-column'>
-            <div className='desc-field left'>
-              <div className='desc-field-number'>1</div>
-              <div className='desc-field-title'>Ustalenie kryteriów</div>
-              <div className='desc-field-description'>
-                Ustalimy dokładnie, czego potrzebuje Twoja witryna. Jeżeli masz określone preferencje wizualne, może je określić. W przeciągu kilku
-                dni przygotujemy projekt wizualny stony, aby mieć pewność, że Twoja przyszła strona na pewno Cię zadowoli.
-              </div>
-            </div>
-          </div>
-          <div className='column middle-column'>
-            <div className="middle-line-wrapper">
-              <div className="middle-line"></div>
-            </div>
-          </div>
-          <div className='column right-column'></div>
+          <span className='first-section-title whitened'>Jak to działa?</span>
+          <span className='second-section-title whitened'>Zobacz, jak wyglądać będzie nasza współpraca</span>
         </div>
       </div>
     </div>
