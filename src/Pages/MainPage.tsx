@@ -1,6 +1,7 @@
 import React from 'react';
 import './PageStyles/MainPage.scss';
 import LaptopImage from '../images/hero-laptop.jpg';
+import CurvedArrowImaqe from '../images/curved-arrow.png';
 import { MdWeb } from 'react-icons/md';
 import ServiceCard from '../Components/ServiceCard';
 import MainNavbar from '../Components/MainNavbar';
@@ -70,10 +71,19 @@ const MainPage: React.FC = () => {
         </div>
         <div className='steps-root'>
           <div className='steps'>
+            <div className='step'> </div>
+            <div className='arrow'>
+              {' '}
+              <div className='image-arrow'>
+                <img src={CurvedArrowImaqe} alt='arrow' />
+              </div>
+            </div>
             <div className='step'></div>
-            <div className='arrow'></div>
-            <div className='step'></div>
-            <div className='arrow'></div>
+            <div className='arrow'>
+              <div className='image-arrow'>
+                <img src={CurvedArrowImaqe} alt='arrow' />
+              </div>
+            </div>
             <div className='step'></div>
           </div>
         </div>

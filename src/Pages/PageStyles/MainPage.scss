@@ -116,6 +116,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 100px;
   }
   .steps {
     display: flex;
@@ -127,11 +128,20 @@
     .step {
       width: 20%;
       height: 500px;
-      background-color: white;
+
       border-radius: 20px;
     }
     .arrow {
       width: 20%;
+      height: fit-content;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      top: -50px;
+      .image-arrow img {
+        width: 300px;
+      }
     }
   }
 }
