@@ -128,8 +128,21 @@
     .step {
       width: 20%;
       height: 500px;
-
       border-radius: 20px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+
+      .step-title {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .step-description {
+        font-size: 16px;
+        text-align: center;
+      }
     }
     .arrow {
       width: 20%;

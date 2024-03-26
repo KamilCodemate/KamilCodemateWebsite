@@ -10,7 +10,8 @@ import { IoPodiumOutline } from 'react-icons/io5';
 import { GoShieldCheck } from 'react-icons/go';
 import { FaChartLine } from 'react-icons/fa6';
 import { DiStreamline } from 'react-icons/di';
-
+import { GrContactInfo } from 'react-icons/gr';
+import { GoProjectSymlink } from 'react-icons/go';
 const MainPage: React.FC = () => {
   return (
     <div className='container'>
@@ -71,14 +72,32 @@ const MainPage: React.FC = () => {
         </div>
         <div className='steps-root'>
           <div className='steps'>
-            <div className='step'> </div>
+            <div className='step'>
+              <div className='step-icon'>
+                <GrContactInfo size={120} color={'white'} />
+              </div>
+              <div className='step-title'>Ustalenie kryteriów</div>
+              <div className='step-description'>
+                Ustalimy dokładnie, czego potrzebuje Twoja witryna. Możesz określić swoje preferencje wizualne lub zostawić to nam. W ciągu kilku dni
+                przygotujemy projekt graficzny strony, aby mieć pewność, że Twoja witryna Cię zadowoli.
+              </div>
+            </div>
             <div className='arrow'>
               {' '}
               <div className='image-arrow'>
                 <img src={CurvedArrowImaqe} alt='arrow' />
               </div>
             </div>
-            <div className='step'></div>
+            <div className='step'>
+              <div className='step-icon'>
+                <GoProjectSymlink size={120} color={'white'} />
+              </div>
+              <div className='step-title'>Budowa Witryny</div>
+              <div className='step-description'>
+                Po dostosowaniu projektu wizualnego, przechodzimy do budowy strony. Umieścimy witrynę pod tymaczasowym linkiem, dzięki czemu będziesz
+                mógł widzieć ją w oryginalnej postaci. Cały czas możesz poprosić o zmodyfikowanie rzeczy, które Ci nie odpowiadają.
+              </div>
+            </div>
             <div className='arrow'>
               <div className='image-arrow'>
                 <img src={CurvedArrowImaqe} alt='arrow' />
