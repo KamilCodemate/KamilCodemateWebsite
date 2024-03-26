@@ -160,3 +160,19 @@
     }
   }
 }
+#price-list {
+  min-height: 100vh;
+  width: 100%;
+  background-color: white;
+
+  .price-list-root {
+    .price-list-root {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding-top: 100px;
+    }
+  }
+}

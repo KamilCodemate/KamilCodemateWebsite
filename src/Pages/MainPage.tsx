@@ -118,6 +118,13 @@ const MainPage: React.FC = () => {
           </div>
         </div>
       </div>
+      <div id='price-list'>
+        <div className='section-title'>
+          <span className='first-section-title blacked'>Cennik</span>
+          <span className='second-section-title blacked'>Zobacz orientacyjne ceny dla Twojej witryny</span>
+        </div>
+        <div className='price-list-root'></div>
+      </div>
     </div>
   );
 };
