@@ -12,6 +12,7 @@ import { FaChartLine } from 'react-icons/fa6';
 import { DiStreamline } from 'react-icons/di';
 import { GrContactInfo } from 'react-icons/gr';
 import { GoProjectSymlink } from 'react-icons/go';
+import { IoCloudUploadOutline } from 'react-icons/io5';
 const MainPage: React.FC = () => {
   return (
     <div className='container'>
@@ -103,7 +104,17 @@ const MainPage: React.FC = () => {
                 <img src={CurvedArrowImaqe} alt='arrow' />
               </div>
             </div>
-            <div className='step'></div>
+            <div className='step'>
+              {' '}
+              <div className='step-icon'>
+                <IoCloudUploadOutline size={120} color={'white'} />
+              </div>
+              <div className='step-title'>Umieszczenie strony na hostingu</div>
+              <div className='step-description'>
+                Otrzymasz spersonalizowane porównanie hostingów, które będą najlepiej dopasowane do Twojej witryny. Zakupimy domenę i umieścimy stronę
+                w sieci. Zajmiemy się ewentualną kampanią reklamową. To wszystko!
+              </div>
+            </div>
           </div>
         </div>
       </div>
