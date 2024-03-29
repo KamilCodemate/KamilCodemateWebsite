@@ -239,6 +239,42 @@ const MainPage: React.FC = () => {
           </div>
         </div>
       </div>
+      <div id='contact'>
+        <div className='section-title'>
+          <span className='first-section-title whitened'>Kontakt</span>
+          <span className='second-section-title whitened'>Masz jakieś wątpliwości lub pytania? Napisz do nas</span>
+        </div>
+        <div className='contact-cols'>
+          <div className='contact-left-col'>
+            <div className='main-desc'>
+              Zadaj pytanie, a odpowiemy najszyciej jak możemy na podany przez Ciebie w formularzu adres e-mail. Jeżeli szukasz bezpłatnej wyceny
+              swojej witryny zrób to przez osobny FORMULARZ WYCENY.
+            </div>
+            <div className='contact-info'>
+              <div className='contact-info-title'>Dane kontaktowe:</div>
+              <div className='contact-info-content'>
+                E-mail: kamil.codemate@gmail.com <br />
+                Telefon: 123 456 789
+              </div>
+            </div>
+            <div className='faq'>
+              <div className='faq-title'>Najczęściej zadawane pytania:</div>
+              <div className='faq-content'>
+                <ul>
+                  <li>Czym jest hosting?</li>
+                  <li>Czym jest back-end?</li>
+                  <li>Co oznacza responsywność strony?</li>
+                  <li>Kiedy poznam ostateczną cenę za swoją witrynę?</li>
+                  <li>Co ma wpływ na cenę za wykonanie witryny?</li>
+                  <li>Czy wystawiacie faktury VAT?</li>
+                  <li>Jakie usługi są świadczone w ramach "opieki nad stroną"?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className='contact-right-col'></div>
+        </div>
+      </div>
     </div>
   );
 };
