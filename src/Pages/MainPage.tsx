@@ -241,8 +241,8 @@ const MainPage: React.FC = () => {
       </div>
       <div id='contact'>
         <div className='section-title'>
-          <span className='first-section-title whitened'>Kontakt</span>
-          <span className='second-section-title whitened'>Masz jakieś wątpliwości lub pytania? Napisz do nas</span>
+          <span className='first-section-title blacked'>Kontakt</span>
+          <span className='second-section-title blacked'>Masz jakieś wątpliwości lub pytania? Napisz do nas</span>
         </div>
         <div className='contact-cols'>
           <div className='contact-left-col'>
@@ -272,7 +272,14 @@ const MainPage: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className='contact-right-col'></div>
+          <div className='contact-right-col'>
+            <div className='contact-form-title'>Formularz kontaktowy</div>
+            <div className='contact-form'>
+              <form>
+                <div className='name-surname'></div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
