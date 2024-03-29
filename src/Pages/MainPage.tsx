@@ -13,6 +13,8 @@ import { DiStreamline } from 'react-icons/di';
 import { GrContactInfo } from 'react-icons/gr';
 import { GoProjectSymlink } from 'react-icons/go';
 import { IoCloudUploadOutline } from 'react-icons/io5';
+import { IoMdCheckmarkCircle } from 'react-icons/io';
+import { HiQuestionMarkCircle } from 'react-icons/hi';
 const MainPage: React.FC = () => {
   return (
     <div className='container'>
@@ -123,7 +125,119 @@ const MainPage: React.FC = () => {
           <span className='first-section-title blacked'>Cennik</span>
           <span className='second-section-title blacked'>Zobacz orientacyjne ceny dla Twojej witryny</span>
         </div>
-        <div className='price-list-root'></div>
+        <div className='pricing-cols'>
+          <div className='pricing-first-col'>
+            <div className='about-product-title'>O tym, co kupujesz</div>
+            <div className='about-product-desc'>
+              Zamawiając u nas witrynę, otrzymujesz gwarancję niezawodności i jakości. Dla każdego zamówienia otrzymasz bezpłatny pakiet opieki nad
+              Twoją witryną przez 6 miesięcy. Chcesz coś zmienić? - my to wykonujemy.
+            </div>
+            <div className='accessories'>
+              <div className='accessories-title'>Dla dowolnej witryny: </div>
+              <div className='accessories-content'>
+                <ul className='first-accessories-col'>
+                  <li>
+                    <IoMdCheckmarkCircle />
+                    Profesjonalny projekt graficzny
+                  </li>
+                  <li>
+                    <IoMdCheckmarkCircle />
+                    Nieograniczona liczba podstron
+                  </li>
+                  <li>
+                    <IoMdCheckmarkCircle />
+                    Dopasowane zdjęcia
+                  </li>
+                  <li>
+                    <IoMdCheckmarkCircle />
+                    Opracowane teksty
+                  </li>
+                  <li>
+                    <IoMdCheckmarkCircle />
+                    Pełna responsywność
+                  </li>
+                </ul>
+                <ul className='second-accessories-col'>
+                  <li>
+                    <IoMdCheckmarkCircle />
+                    Formularz kontaktowy
+                  </li>
+                  <li>
+                    <IoMdCheckmarkCircle />
+                    Opieka nad witryną
+                  </li>
+                  <li>
+                    <IoMdCheckmarkCircle />
+                    Gwarancja na okres 24 miesięcy
+                  </li>
+                  <li>
+                    <IoMdCheckmarkCircle />
+                    RODO i ciasteczka
+                  </li>
+                  <li>
+                    <IoMdCheckmarkCircle />
+                    Zaprojektowanie logo
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className='pricing-second-col'>
+            <div className='page-pricing'>
+              <div className='page-pricing-title-desc'>
+                {' '}
+                <div className='page-pricing-title'>Landing Page</div>
+                <div className='page-pricing-desc'>
+                  Pokaż się od najlepszej strony dzięki nowoczesnej stronie "wizytówce" z formularzem kontaktowym.
+                </div>
+              </div>
+              <div className='page-pricing-price'>
+                <div className='page-price'>
+                  <span>
+                    <sub>Od</sub>850<sup>pln</sup>
+                  </span>
+                </div>
+                <div className='page-qmark'>
+                  <HiQuestionMarkCircle />
+                </div>
+              </div>
+            </div>
+            <div className='page-pricing'>
+              <div className='page-pricing-title-desc'>
+                {' '}
+                <div className='page-pricing-title'>Strona z blogiem</div>
+                <div className='page-pricing-desc'>Zamów stronę z systemami back-end - np. własnym blogiem, komentarzami, etc.</div>
+              </div>
+              <div className='page-pricing-price'>
+                <div className='page-price'>
+                  <span>
+                    <sub>Od</sub>1550<sup>pln</sup>
+                  </span>
+                </div>
+                <div className='page-qmark'>
+                  <HiQuestionMarkCircle />
+                </div>
+              </div>
+            </div>
+            <div className='page-pricing'>
+              <div className='page-pricing-title-desc'>
+                {' '}
+                <div className='page-pricing-title'>Sklep internetowy</div>
+                <div className='page-pricing-desc'>Rozpocznij swój biznes z własnym sklepem internetowym dostosowanym do Twoich potrzeb.</div>
+              </div>
+              <div className='page-pricing-price'>
+                <div className='page-price'>
+                  <span>
+                    <sub>Od</sub>5500<sup>pln</sup>
+                  </span>
+                </div>
+                <div className='page-qmark'>
+                  <HiQuestionMarkCircle />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

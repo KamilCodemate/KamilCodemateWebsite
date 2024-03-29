@@ -165,14 +165,145 @@
   width: 100%;
   background-color: white;
 
-  .price-list-root {
-    .price-list-root {
-      width: 100%;
+  .pricing-cols {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > div {
+      width: 50%;
+      height: 600px;
+
       display: flex;
-      align-items: center;
-      justify-content: center;
       flex-direction: column;
-      padding-top: 100px;
+      align-items: center;
+    }
+    .pricing-first-col {
+      padding-left: 100px;
+      .about-product-title {
+        font-weight: bold;
+        font-size: 30px;
+      }
+      .about-product-desc {
+        margin-top: 50px;
+        font-weight: bold;
+        font-size: 17px;
+        color: rgb(99, 99, 99);
+        text-align: center;
+      }
+      .accessories {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .accessories-title {
+          margin-top: 100px;
+          font-weight: bold;
+          font-size: 20px;
+          width: 100%;
+          text-align: left;
+        }
+        .accessories-content {
+          margin-top: 50px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+
+          gap: 20%;
+          ul {
+            list-style-type: none;
+            font-size: 16px;
+
+            color: rgb(99, 99, 99);
+            li {
+              margin-top: 8px;
+              margin-bottom: 8px;
+              font-weight: 500;
+            }
+            li svg {
+              color: #18b53f;
+              fill: #18b53f;
+              font-size: 20px;
+              vertical-align: middle;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+    .pricing-second-col {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      .page-pricing {
+        display: flex;
+        width: 80%;
+        height: 130px;
+        border: 1px solid rgb(99, 99, 99);
+        border-left: 20px solid black;
+        border-radius: 20px;
+        padding-left: 20px;
+        padding-top: 10px;
+        .page-pricing-title-desc {
+          width: 60%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .page-pricing-title {
+            font-size: 25px;
+            color: rgb(99, 99, 99);
+            font-weight: 600;
+          }
+          .page-pricing-desc {
+            font-size: 16px;
+            color: rgb(126, 126, 126);
+            font-weight: 600;
+            margin-bottom: 20px;
+          }
+        }
+        .page-pricing-price {
+          width: 40%;
+          display: flex;
+
+          .page-price {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: bold;
+
+            sup,
+            sub {
+              font-size: 0.5em;
+              color: rgb(126, 126, 126);
+            }
+            sub {
+              position: relative;
+              bottom: 10px;
+              right: 5px;
+            }
+            sup {
+              position: relative;
+              bottom: 10px;
+              right: -5px;
+            }
+          }
+          .page-qmark {
+            width: 20%;
+            height: 100%;
+            font-size: 30px;
+
+            svg:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
     }
   }
 }
