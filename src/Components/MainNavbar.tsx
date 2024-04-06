@@ -8,6 +8,7 @@ const MainNavbar: React.FC = () => {
         <div className='navbar-link'>HOME</div>
         <div className='navbar-link'>Nasze usługi</div>
         <div className='navbar-link'>Jak to działa</div>
+        <div className='navbar-link'>Cennik</div>
         <div className='navbar-link'>Kontakt</div>
       </div>
     </div>
