@@ -1,0 +1,463 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero {
+  height: calc(100vh - 80px);
+  background-color: black;
+  display: flex;
+}
+.hero #hero-left-col,
+.hero #hero-right-col {
+  width: 50%;
+  height: calc(85vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero #hero-left-col {
+  padding-left: 50px;
+}
+.hero #hero-right-col {
+  padding-right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero #hero-right-col img {
+  width: 85%;
+}
+.hero #hero-title {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+.hero #hero-button {
+  padding-top: 30px;
+}
+.hero #hero-button button {
+  width: 50%;
+  height: 60px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 40px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#services {
+  background-color: white;
+  width: 100%;
+  min-height: calc(100vh - 50px);
+  padding-bottom: 100px;
+}
+
+#services-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+}
+#services-cards .service-row {
+  width: 100%;
+  height: 250px;
+  padding: 0 50px 0 50px;
+  display: flex;
+  gap: 10px;
+}
+
+.section-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 50px;
+  margin-bottom: 100px;
+}
+
+.first-section-title {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.first-section-title.blacked {
+  color: black;
+}
+
+.second-section-title.blacked {
+  color: rgb(66, 66, 66);
+}
+
+.first-section-title.whitened {
+  color: white;
+}
+
+.second-section-title.whitened {
+  color: rgb(189, 189, 189);
+}
+
+.second-section-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#how-it-works {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+#how-it-works .steps-root {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+#how-it-works .steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+}
+#how-it-works .steps .step {
+  width: 20%;
+  height: 500px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+#how-it-works .steps .step .step-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+#how-it-works .steps .step .step-description {
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(189, 189, 189);
+}
+#how-it-works .steps .arrow {
+  width: 20%;
+  height: -moz-fit-content;
+  height: fit-content;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -50px;
+}
+#how-it-works .steps .arrow .image-arrow img {
+  width: 300px;
+}
+
+#price-list {
+  min-height: 100vh;
+  width: 100%;
+  background-color: white;
+}
+#price-list .pricing-cols {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#price-list .pricing-cols > div {
+  width: 50%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#price-list .pricing-cols .pricing-first-col {
+  padding-left: 100px;
+}
+#price-list .pricing-cols .pricing-first-col .about-product-title {
+  font-weight: bold;
+  font-size: 30px;
+}
+#price-list .pricing-cols .pricing-first-col .about-product-desc {
+  margin-top: 50px;
+  font-weight: bold;
+  font-size: 17px;
+  color: rgb(99, 99, 99);
+  text-align: center;
+}
+#price-list .pricing-cols .pricing-first-col .accessories {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+#price-list .pricing-cols .pricing-first-col .accessories .accessories-title {
+  margin-top: 100px;
+  font-weight: bold;
+  font-size: 20px;
+  width: 100%;
+  text-align: left;
+}
+#price-list .pricing-cols .pricing-first-col .accessories .accessories-content {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20%;
+}
+#price-list .pricing-cols .pricing-first-col .accessories .accessories-content ul {
+  list-style-type: none;
+  font-size: 16px;
+  color: rgb(99, 99, 99);
+}
+#price-list .pricing-cols .pricing-first-col .accessories .accessories-content ul li {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+#price-list .pricing-cols .pricing-first-col .accessories .accessories-content ul li svg {
+  color: #18b53f;
+  fill: #18b53f;
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+#price-list .pricing-cols .pricing-second-col {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#price-list .pricing-cols .pricing-second-col .page-pricing {
+  display: flex;
+  width: 80%;
+  height: 130px;
+  border: 1px solid rgb(99, 99, 99);
+  border-left: 20px solid black;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+#price-list .pricing-cols .pricing-second-col .page-pricing .page-pricing-title-desc {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#price-list .pricing-cols .pricing-second-col .page-pricing .page-pricing-title-desc .page-pricing-title {
+  font-size: 25px;
+  color: rgb(99, 99, 99);
+  font-weight: 600;
+}
+#price-list .pricing-cols .pricing-second-col .page-pricing .page-pricing-title-desc .page-pricing-desc {
+  font-size: 16px;
+  color: rgb(126, 126, 126);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+#price-list .pricing-cols .pricing-second-col .page-pricing .page-pricing-price {
+  width: 40%;
+  display: flex;
+}
+#price-list .pricing-cols .pricing-second-col .page-pricing .page-pricing-price .page-price {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+#price-list .pricing-cols .pricing-second-col .page-pricing .page-pricing-price .page-price sup,
+#price-list .pricing-cols .pricing-second-col .page-pricing .page-pricing-price .page-price sub {
+  font-size: 0.5em;
+  color: rgb(126, 126, 126);
+}
+#price-list .pricing-cols .pricing-second-col .page-pricing .page-pricing-price .page-price sub {
+  position: relative;
+  bottom: 10px;
+  right: 5px;
+}
+#price-list .pricing-cols .pricing-second-col .page-pricing .page-pricing-price .page-price sup {
+  position: relative;
+  bottom: 10px;
+  right: -5px;
+}
+#price-list .pricing-cols .pricing-second-col .page-pricing .page-pricing-price .page-qmark {
+  width: 20%;
+  height: 100%;
+  font-size: 30px;
+}
+#price-list .pricing-cols .pricing-second-col .page-pricing .page-pricing-price .page-qmark svg:hover {
+  cursor: pointer;
+}
+
+#contact {
+  min-height: 100vh;
+  width: 100%;
+  background-color: white;
+  color: blackwhite;
+}
+#contact .contact-cols {
+  width: 100%;
+  display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+#contact .contact-cols .contact-left-col {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+#contact .contact-cols .contact-left-col .main-desc {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+#contact .contact-cols .contact-left-col .contact-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-weight: 600;
+}
+#contact .contact-cols .contact-left-col .contact-info .contact-info-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+#contact .contact-cols .contact-left-col .contact-info .contact-info-content {
+  font-size: 17px;
+  margin-bottom: 50px;
+}
+#contact .contact-cols .contact-left-col .faq {
+  display: flex;
+  flex-direction: column;
+}
+#contact .contact-cols .contact-left-col .faq .faq-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+#contact .contact-cols .contact-left-col .faq .faq-content {
+  font-size: 17px;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+#contact .contact-cols .contact-left-col .faq .faq-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+#contact .contact-cols .contact-left-col .faq .faq-content ul li {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#contact .contact-cols .contact-right-col {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+#contact .contact-cols .contact-right-col .contact-form-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+#contact .contact-cols .contact-right-col .contact-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#contact .contact-cols .contact-right-col .contact-form form {
+  width: 700px;
+  height: 650px;
+  margin-bottom: 100px;
+  border: 2px solid rgb(99, 99, 99);
+  border-radius: 15px;
+  padding-left: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+#contact .contact-cols .contact-right-col .contact-form form .contact-form-first-row {
+  display: flex;
+}
+#contact .contact-cols .contact-right-col .contact-form form > div {
+  margin-top: 20px;
+  width: 100%;
+}
+#contact .contact-cols .contact-right-col .contact-form form > div input,
+#contact .contact-cols .contact-right-col .contact-form form > div textarea {
+  width: 90%;
+  height: 50px;
+  border: 2px solid rgb(99, 99, 99);
+  border-radius: 10px;
+  font-size: 18px;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+#contact .contact-cols .contact-right-col .contact-form form > div .name-surname {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+#contact .contact-cols .contact-right-col .contact-form form > div .email {
+  width: 50%;
+}
+#contact .contact-cols .contact-right-col .contact-form form .phone-number > input {
+  width: 95%;
+}
+#contact .contact-cols .contact-right-col .contact-form form .message-content {
+  height: 200px;
+}
+#contact .contact-cols .contact-right-col .contact-form form .message-content > textarea {
+  width: 95%;
+  height: 100%;
+  font-size: 18px;
+}
+#contact .contact-cols .contact-right-col .contact-form form .contact-form-fourth-row {
+  margin-top: 50px;
+  font-size: 16px;
+  width: 100%;
+}
+#contact .contact-cols .contact-right-col .contact-form form .contact-form-fourth-row .consent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  width: 100%;
+}
+#contact .contact-cols .contact-right-col .contact-form form .contact-form-fourth-row .consent > input {
+  width: 30px;
+  position: relative;
+  top: -3px;
+}
+#contact .contact-cols .contact-right-col .contact-form form .contact-form-fifth-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 10px;
+}
+#contact .contact-cols .contact-right-col .contact-form form .contact-form-fifth-row input {
+  width: 200px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: transparent;
+  transition: ease-in-out 0.3s;
+}
+#contact .contact-cols .contact-right-col .contact-form form .contact-form-fifth-row input:hover {
+  cursor: pointer;
+  background-color: rgb(223, 223, 223);
+}/*# sourceMappingURL=MainPage.css.map */

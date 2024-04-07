@@ -1,0 +1,22 @@
+.main-navbar {
+  background-color: black;
+  color: white;
+  height: 80px;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.main-navbar .navbar-logo {
+  padding-top: 10px;
+  font-weight: 600;
+  font-size: 35px;
+}
+.main-navbar .navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-size: 20px;
+  font-weight: 500;
+}/*# sourceMappingURL=MainNavbar.css.map */

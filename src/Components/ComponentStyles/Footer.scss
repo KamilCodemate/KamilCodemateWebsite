@@ -1,0 +1,93 @@
+.footer {
+  width: 100%;
+  height: 400px;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  color: white;
+
+  .slogan {
+    font-size: 20px;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-first-col {
+    width: 50%;
+    height: 300px;
+    padding-left: 100px;
+    padding-top: 20px;
+    .footer-logo {
+      width: 100%;
+      font-size: 33px;
+      font-weight: bold;
+    }
+    .footer-services-root {
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+
+      .footer-services-title {
+        font-size: 22px;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+      .footer-services {
+        margin-top: 20px;
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+
+        div {
+          display: flex;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .footer-second-col {
+    width: 50%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .footer-links-title {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    .footer-links {
+      width: 80%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      margin-top: 40px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+
+      & > div:nth-last-child(1) {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        justify-self: center;
+        font-size: 19px;
+        margin-top: 25px;
+        text-decoration: underline;
+      }
+    }
+  }
+  .copy {
+    font-size: 17px;
+    font-weight: bold;
+    font-style: italic;
+  }
+}
