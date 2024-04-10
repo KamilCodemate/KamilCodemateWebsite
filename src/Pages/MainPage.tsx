@@ -16,6 +16,7 @@ import { IoCloudUploadOutline } from 'react-icons/io5';
 import { IoMdCheckmarkCircle } from 'react-icons/io';
 import { HiQuestionMarkCircle } from 'react-icons/hi';
 import Footer from '../Components/Footer';
+import Header from '../Components/Header';
 const MainPage: React.FC = () => {
   return (
     <div className='container'>
@@ -35,10 +36,7 @@ const MainPage: React.FC = () => {
         M
       </div>
       <div id='services'>
-        <div className='section-title'>
-          <span className='first-section-title blacked'>Nasze usługi</span>
-          <span className='second-section-title blacked'>Zobacz, z czym możemy Ci pomóc</span>
-        </div>
+        <Header title='Nasze usługi' description='Zobacz, z czym możemy Ci pomóc' type='blacked' />
         <div id='services-cards'>
           <div className='service-row service-first-row'>
             <ServiceCard
@@ -70,10 +68,8 @@ const MainPage: React.FC = () => {
         </div>
       </div>
       <div id='how-it-works'>
-        <div className='section-title'>
-          <span className='first-section-title whitened'>Jak to działa?</span>
-          <span className='second-section-title whitened'>Zobacz, jak wyglądać będzie nasza współpraca</span>
-        </div>
+        <Header title='Jak to działa?' description='Zobacz, jak wyglądać będzie nasza współpraca' type='whitened' />
+
         <div className='steps-root'>
           <div className='steps'>
             <div className='step'>
@@ -122,10 +118,8 @@ const MainPage: React.FC = () => {
         </div>
       </div>
       <div id='price-list'>
-        <div className='section-title'>
-          <span className='first-section-title blacked'>Cennik</span>
-          <span className='second-section-title blacked'>Zobacz orientacyjne ceny dla Twojej witryny</span>
-        </div>
+        <Header title='Cennik' description='Zobacz orientacyjne ceny dla Twojej witryny' type='blacked' />
+
         <div className='pricing-cols'>
           <div className='pricing-first-col'>
             <div className='about-product-title'>O tym, co kupujesz</div>
@@ -241,10 +235,8 @@ const MainPage: React.FC = () => {
         </div>
       </div>
       <div id='contact'>
-        <div className='section-title'>
-          <span className='first-section-title blacked'>Kontakt</span>
-          <span className='second-section-title blacked'>Masz jakieś wątpliwości lub pytania? Napisz do nas</span>
-        </div>
+        <Header title='Kontakt' description='Masz jakieś wątpliwości lub pytania? Napisz do nas' type='blacked' />
+
         <div className='contact-cols'>
           <div className='contact-left-col'>
             <div className='main-desc'>
