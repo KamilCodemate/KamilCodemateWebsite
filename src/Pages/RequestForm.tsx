@@ -3,6 +3,7 @@ import Footer from '../Components/Footer';
 import MainNavbar from '../Components/MainNavbar';
 import './PageStyles/RequestForm.scss';
 import Header from '../Components/Header';
+
 const RequestForm: React.FC = () => {
   return (
     <div className='request-form'>
@@ -13,26 +14,45 @@ const RequestForm: React.FC = () => {
           <div className='choose-option-title'>Wybierz rodzaj usługi, jaki Cię interesuje:</div>
           <div className='choose-option-options'>
             <div className='choose-option-container'>
-              <input type='radio' className='choose-option-option' name='choose-option-option' value='opt1' />
-              <span>Zbudowanie witryny od podstaw</span>
+              <input type='radio' id='opt1' className='choose-option-option' name='choose-option-option' value='opt1' />
+              <label htmlFor='opt1'>
+                <span>Zbudowanie witryny od podstaw</span>
+              </label>
             </div>
             <div className='choose-option-container'>
-              <input type='radio' className='choose-option-option' name='choose-option-option' value='opt1' />
-              <span>Aktualizacja istniejącej witryny</span>
+              <input type='radio' id='opt2' className='choose-option-option' name='choose-option-option' value='opt2' />
+              <label htmlFor='opt2'>
+                <span>Aktualizacja istniejącej witryny</span>
+              </label>
             </div>
             <div className='choose-option-container'>
-              <input type='radio' className='choose-option-option' name='choose-option-option' value='opt1' />
-              <span>Stała współpraca nad systematyczną modyfikacją istniejącej witryny</span>
+              <input type='radio' id='opt3' className='choose-option-option' name='choose-option-option' value='opt3' />
+              <label htmlFor='opt3'>
+                <span>Stała współpraca nad systematyczną modyfikacją istniejącej witryny</span>
+              </label>
             </div>
             <div className='choose-option-container'>
-              <input type='radio' className='choose-option-option' name='choose-option-option' value='opt1' />
-              <span>Przeprowadzenie kampanii reklamowej do istniejącej witryny</span>
+              <input type='radio' id='opt4' className='choose-option-option' name='choose-option-option' value='opt4' />
+              <label htmlFor='opt4'>
+                <span>Przeprowadzenie kampanii reklamowej do istniejącej witryny</span>
+              </label>
             </div>
             <div className='choose-option-container'>
-              <input type='radio' className='choose-option-option' name='choose-option-option' value='opt1' />
-              <span>Inne</span>
+              <input type='radio' id='opt5' className='choose-option-option' name='choose-option-option' value='opt5' />
+              <label htmlFor='opt5'>
+                <span>Inne</span>
+              </label>
             </div>
           </div>
+        </div>
+        <div className='request-form-root'>
+          <div className='left-col'>
+            <div className='left-col-title'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum ac neque quis sollicitudin. Suspendisse sit amet accumsan est.
+              Nullam porttitor tristique sollicitudin. Curabitur ac lacus convallis sem euismod mollis nec quis dui. Donec at tincidunt nulla:
+            </div>
+          </div>
+          <div className='right-col'></div>
         </div>
       </div>
 

@@ -37,4 +37,21 @@ body {
       }
     }
   }
+  .request-form-root {
+    width: 100%;
+    display: flex;
+    margin-top: 100px;
+    .left-col,
+    .right-col {
+      width: 50%;
+      min-height: 600px;
+    }
+    .left-col {
+      .left-col-title {
+        font-size: 18px;
+        color: rgb(60, 60, 60);
+        font-weight: bold;
+      }
+    }
+  }
 }
