@@ -1,6 +1,10 @@
 import React from 'react';
 import './ComponentStyles/ContactForm.scss';
-const ContactForm: React.FC = () => {
+
+type Props = {
+  MessageTitle: string;
+};
+const ContactForm: React.FC<Props> = ({ MessageTitle }) => {
   return (
     <div className='contact-form'>
       <form>
@@ -23,7 +27,7 @@ const ContactForm: React.FC = () => {
         <div className='contact-form-third-row'>
           <div className='message-content'>
             {' '}
-            <span>Treść wiadomości:</span>
+            <span>{MessageTitle}</span>
             <textarea></textarea>
           </div>
         </div>

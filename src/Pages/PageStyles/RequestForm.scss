@@ -37,10 +37,11 @@ body {
       }
     }
   }
-  .request-form-root {
+  .form-root {
     width: 100%;
     display: flex;
     margin-top: 100px;
+    gap: 50px;
     .left-col,
     .right-col {
       width: 50%;
