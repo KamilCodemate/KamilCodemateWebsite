@@ -3,6 +3,7 @@ import './ComponentStyles/ContactForm.scss';
 
 type Props = {
   MessageTitle: string;
+  FormType: 'contact' | 'request';
 };
 const ContactForm: React.FC<Props> = ({ MessageTitle }) => {
   return (

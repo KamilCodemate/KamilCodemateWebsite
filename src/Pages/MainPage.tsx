@@ -268,7 +268,7 @@ const MainPage: React.FC = () => {
           </div>
           <div className='contact-right-col'>
             <div className='contact-form-title'>Formularz kontaktowy</div>
-            <ContactForm MessageTitle='Treść:' />
+            <ContactForm MessageTitle='Treść wiadomości: ' FormType='contact' />
           </div>
         </div>
       </div>

@@ -5,7 +5,10 @@ import './PageStyles/RequestForm.scss';
 import Header from '../Components/Header';
 import CreateWebsiteFormBasicsList from '../Components/RequestFolderElements/CreateWebsiteFormBasicsList';
 import ContactForm from '../Components/ContactForm';
-
+import UpdateWebsiteList from '../Components/RequestFolderElements/UpdateWebsiteList';
+import ConstantUpdateWebsiteList from '../Components/RequestFolderElements/ConstantUpdateWebsiteList';
+import WebsiteServicesList from '../Components/RequestFolderElements/WebsiteServicesList';
+import OtherList from '../Components/RequestFolderElements/OtherList';
 const RequestForm: React.FC = () => {
   const [checkedRadio, setCheckedRadio] = useState('');
 
@@ -13,6 +16,20 @@ const RequestForm: React.FC = () => {
     setCheckedRadio(event.target.value);
   };
 
+  const returnCorrectList = () => {
+    switch (checkedRadio) {
+      case 'opt1':
+        return <CreateWebsiteFormBasicsList />;
+      case 'opt2':
+        return <UpdateWebsiteList />;
+      case 'opt3':
+        return <ConstantUpdateWebsiteList />;
+      case 'opt4':
+        return <WebsiteServicesList />;
+      case 'opt5':
+        return <OtherList />;
+    }
+  };
   return (
     <div className='request-form'>
       <MainNavbar />
@@ -56,13 +73,13 @@ const RequestForm: React.FC = () => {
         <div className='form-root' style={checkedRadio !== '' ? { display: 'flex' } : { display: 'none' }}>
           <div className='left-col'>
             <div className='left-col-title'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum ac neque quis sollicitudin. Suspendisse sit amet accumsan est.
-              Nullam porttitor tristique sollicitudin. Curabitur ac lacus convallis sem euismod mollis nec quis dui. Donec at tincidunt nulla:
+              Wypełnij formularz obok. Uzupełnij swoje imię i nazwisko, adres e-mail i opcjonalnie numer telefonu. W polu "opis" uzupełnij poniższe
+              informacje:
             </div>
-            <CreateWebsiteFormBasicsList />
+            {returnCorrectList()}
           </div>
           <div className='right-col'>
-            <ContactForm MessageTitle='Treść zapyania:' />
+            <ContactForm MessageTitle='Opis:' FormType='request' />
           </div>
         </div>
       </div>
