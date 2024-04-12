@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ComponentStyles/ContactForm.scss';
-
+import { MdDeleteForever } from 'react-icons/md';
 type Props = {
   MessageTitle: string;
   FormType: 'contact' | 'request';
 };
-const ContactForm: React.FC<Props> = ({ MessageTitle }) => {
+const ContactForm: React.FC<Props> = ({ MessageTitle, FormType }) => {
+  const [files, setFiles] = useState<File[]>([]);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const newFiles: File[] = Array.from(e.target.files);
+      setFiles((prevFiles) => [...prevFiles, ...newFiles]);
+    }
+  };
+
+  const handleFileRemove = (index: number) => {
+    setFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
+  };
+
   return (
     <div className='contact-form'>
       <form>
@@ -41,6 +54,26 @@ const ContactForm: React.FC<Props> = ({ MessageTitle }) => {
             </span>
           </div>
         </div>
+        {FormType === 'request' && (
+          <div className='file-upload-root'>
+            <div className='files-display'>
+              {files.map((file, index) => (
+                <div key={index} className='file-item'>
+                  <span>{file.name}</span>
+                  <span className='remove-file' onClick={() => handleFileRemove(index)}>
+                    <MdDeleteForever size={30} />
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className='add-file'>
+              <label>
+                Dodaj plik
+                <input type='file' multiple onChange={handleFileChange} />
+              </label>
+            </div>
+          </div>
+        )}
         <div className='contact-form-fifth-row'>
           <div className='send-btn'>
             {' '}

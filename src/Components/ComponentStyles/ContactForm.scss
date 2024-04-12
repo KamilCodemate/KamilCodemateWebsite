@@ -4,8 +4,9 @@
   justify-content: center;
   form {
     width: 700px;
-    height: 650px;
+    min-height: 650px;
     margin-bottom: 100px;
+    padding-bottom: 20px;
     border: 2px solid rgb(99, 99, 99);
     border-radius: 15px;
     padding-left: 20px;
@@ -66,6 +67,7 @@
         }
       }
     }
+
     .contact-form-fifth-row {
       width: 100%;
       display: flex;
@@ -82,6 +84,45 @@
       input:hover {
         cursor: pointer;
         background-color: rgb(223, 223, 223);
+      }
+    }
+    .file-upload-root {
+      margin-top: 50px;
+      font-size: 16px;
+      width: 100%;
+      display: flex;
+      border: none;
+
+      .files-display {
+        width: 70%;
+
+        .remove-file {
+          margin-left: 20px;
+          vertical-align: middle;
+        }
+        .remove-file:hover {
+          cursor: pointer;
+        }
+      }
+      input {
+        display: none;
+      }
+      .add-file {
+        width: 30%;
+        display: flex;
+        flex-direction: row-reverse;
+        margin-right: 15px;
+      }
+      .add-file label {
+        width: 150px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #464646;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
       }
     }
   }
