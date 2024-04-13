@@ -1,0 +1,49 @@
+@media only screen and (max-width: 1400px) {
+  #hero {
+    .hero-left-col {
+      width: 40%;
+    }
+    .hero-right-col {
+      width: 60%;
+    }
+    .hero-button button {
+      width: 330px;
+    }
+  }
+}
+@media only screen and (max-width: 1300px) {
+  #hero {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+
+    .hero-left-col {
+      width: 100%;
+      margin-top: 100px;
+    }
+    .hero-right-col {
+      width: 70%;
+    }
+  }
+}
+@media only screen and (max-width: 1000px) {
+  #hero {
+    .hero-right-col {
+      width: 80%;
+    }
+  }
+}
+@media only screen and (max-width: 750px) {
+  #hero {
+    .hero-right-col {
+      width: 100%;
+    }
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .menu-slide-button {
+    display: block;
+  }
+}

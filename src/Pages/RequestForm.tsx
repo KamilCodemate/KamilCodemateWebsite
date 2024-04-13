@@ -9,11 +9,15 @@ import UpdateWebsiteList from '../Components/RequestFolderElements/UpdateWebsite
 import ConstantUpdateWebsiteList from '../Components/RequestFolderElements/ConstantUpdateWebsiteList';
 import WebsiteServicesList from '../Components/RequestFolderElements/WebsiteServicesList';
 import OtherList from '../Components/RequestFolderElements/OtherList';
+import { IoMenu } from 'react-icons/io5';
 const RequestForm: React.FC = () => {
   const [checkedRadio, setCheckedRadio] = useState('');
-
+  const [isMenuActive, activeMenu] = useState(false);
   const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCheckedRadio(event.target.value);
+  };
+  const slideButtonClicked = () => {
+    activeMenu(!isMenuActive);
   };
 
   const returnCorrectList = () => {
@@ -32,7 +36,7 @@ const RequestForm: React.FC = () => {
   };
   return (
     <div className='request-form'>
-      <MainNavbar />
+      <MainNavbar isActive={isMenuActive} />
       <div className='main-content'>
         <Header title='Złóż zapytanie oferty' description='Drogą mailową otrzymasz bezpłatną wycenę i możliwość złożenia zamówienia' type='blacked' />
         <div className='choose-option-container'>
@@ -85,6 +89,7 @@ const RequestForm: React.FC = () => {
       </div>
 
       <Footer />
+      <IoMenu className='menu-slide-button' onClick={slideButtonClicked} />
     </div>
   );
 };

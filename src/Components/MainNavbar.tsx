@@ -1,8 +1,12 @@
 import React from 'react';
 import './ComponentStyles/MainNavbar.scss';
-const MainNavbar: React.FC = () => {
+
+type Props = {
+  isActive: boolean;
+};
+const MainNavbar: React.FC<Props> = ({ isActive }) => {
   return (
-    <div className='main-navbar'>
+    <div className={`main-navbar ${isActive ? 'active' : ''}`}>
       <div className='navbar-logo'>InteFuture</div>
       <div className='navbar-links'>
         <div className='navbar-link'>HOME</div>

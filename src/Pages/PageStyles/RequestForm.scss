@@ -56,3 +56,22 @@ body {
     }
   }
 }
+.menu-slide-button {
+  fill: white;
+  color: white;
+
+  top: 20px;
+  left: 20px;
+  font-size: 50px;
+  display: none;
+  z-index: 999;
+  position: fixed;
+}
+.menu-slide-button:hover {
+  cursor: pointer;
+}
+@media only screen and (max-width: 1050px) {
+  .menu-slide-button {
+    display: block;
+  }
+}

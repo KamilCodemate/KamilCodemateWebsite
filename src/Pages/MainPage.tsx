@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import './PageStyles/MainPage.scss';
+import './PageStyles/MediaQueries/MainPageMediaQuery.scss';
+
 import LaptopImage from '../images/hero-laptop.jpg';
 import CurvedArrowImaqe from '../images/curved-arrow.png';
-import { MdWeb } from 'react-icons/md';
+
+import Footer from '../Components/Footer';
+import Header from '../Components/Header';
+import ContactForm from '../Components/ContactForm';
 import ServiceCard from '../Components/ServiceCard';
 import MainNavbar from '../Components/MainNavbar';
+
+import { MdWeb } from 'react-icons/md';
 import { ImNewTab } from 'react-icons/im';
 import { IoPodiumOutline } from 'react-icons/io5';
 import { GoShieldCheck } from 'react-icons/go';
@@ -15,31 +23,35 @@ import { GoProjectSymlink } from 'react-icons/go';
 import { IoCloudUploadOutline } from 'react-icons/io5';
 import { IoMdCheckmarkCircle } from 'react-icons/io';
 import { HiQuestionMarkCircle } from 'react-icons/hi';
-import Footer from '../Components/Footer';
-import Header from '../Components/Header';
-import ContactForm from '../Components/ContactForm';
+import { IoMenu } from 'react-icons/io5';
+
 const MainPage: React.FC = () => {
+  const [isMenuActive, activeMenu] = useState(false);
+
+  const slideButtonClicked = () => {
+    activeMenu(!isMenuActive);
+  };
   return (
     <div className='container'>
-      <MainNavbar />
-      <div className='hero'>
-        <div id='hero-left-col'>
-          <div id='hero-left-col-main-content'>
-            <span id='hero-title'>Profesjonalne witryny i serwisy internetowe</span>
-            <div id='hero-button'>
+      <MainNavbar isActive={isMenuActive} />
+      <div id='hero'>
+        <div className='hero-left-col'>
+          <div className='hero-left-col-main-content'>
+            <span className='hero-title'>Profesjonalne witryny i serwisy internetowe</span>
+            <div className='hero-button'>
               <button>Zamów darmową wycenę</button>
             </div>
           </div>
         </div>
-        <div id='hero-right-col'>
+        <div className='hero-right-col'>
           <img src={LaptopImage} alt='laptop' />
         </div>
         M
       </div>
       <div id='services'>
         <Header title='Nasze usługi' description='Zobacz, z czym możemy Ci pomóc' type='blacked' />
-        <div id='services-cards'>
-          <div className='service-row service-first-row'>
+        <div className='services-cards'>
+          <div className='service-row'>
             <ServiceCard
               title='Tworzenie witryn od podstaw'
               description='Zbudujemy dla Ciebie witrynę od podstaw, zgodną z Twoimi oczekiwaniami.'
@@ -51,9 +63,6 @@ const MainPage: React.FC = () => {
               icon={ImNewTab}
             />
             <ServiceCard title='Pozycjonowanie' description='Zadbamy o to, aby Twoja witryna była powszechnie odwiedzana.' icon={IoPodiumOutline} />
-          </div>
-
-          <div className='service-row service-second-row'>
             <ServiceCard
               title='Stała opieka nad stroną'
               description='Będziemy pod ręką, kiedy będziesz chciał zaktualizować swoją witrynę.'
@@ -273,6 +282,7 @@ const MainPage: React.FC = () => {
         </div>
       </div>
       <Footer />
+      <IoMenu className='menu-slide-button' onClick={slideButtonClicked} />
     </div>
   );
 };
