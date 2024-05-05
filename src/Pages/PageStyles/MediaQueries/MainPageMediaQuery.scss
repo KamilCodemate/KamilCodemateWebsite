@@ -47,3 +47,48 @@
     display: block;
   }
 }
+@media only screen and (max-width: 1200px) {
+  .services-cards {
+    .service-row {
+      grid-template-columns: 1fr 1fr;
+      height: fit-content;
+      .card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  #how-it-works {
+    .steps-root {
+      .steps {
+        flex-direction: column;
+        gap: 0px;
+        .step {
+          width: 90% !important;
+        }
+        .arrow {
+          display: none;
+          height: 0px;
+          margin: 0;
+          padding: 0;
+          img {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 850px) {
+  .services-cards {
+    .service-row {
+      grid-template-columns: 1fr;
+      height: fit-content;
+
+      .card {
+        width: 80%;
+      }
+    }
+  }
+}
