@@ -147,6 +147,7 @@
 }
 #price-list {
   min-height: 100vh;
+  height: fit-content;
   width: 100%;
   background-color: white;
 
@@ -157,7 +158,7 @@
 
     & > div {
       width: 50%;
-      height: 600px;
+      min-height: 600px;
 
       display: flex;
       flex-direction: column;
@@ -165,6 +166,7 @@
     }
     .pricing-first-col {
       padding-left: 100px;
+
       .about-product-title {
         font-weight: bold;
         font-size: 30px;

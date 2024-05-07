@@ -31,8 +31,6 @@ const Footer: React.FC = () => {
           <div className='footer-link'>Zamów witrynę już teraz</div>
         </div>
       </div>
-      <div className='footer-third-col'></div>
-      <div className='footer-fourth-col'></div>
 
       <div className='copy'>&copy;InteFuture 2024 - Wszelkie Prawa Zastrzeżone</div>
     </div>

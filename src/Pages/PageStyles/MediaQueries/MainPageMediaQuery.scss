@@ -1,4 +1,7 @@
 @media only screen and (max-width: 1400px) {
+  .section-title {
+    text-align: center;
+  }
   #hero {
     .hero-left-col {
       width: 40%;
@@ -10,7 +13,47 @@
       width: 330px;
     }
   }
+  #price-list {
+    .section-title {
+      text-align: center;
+    }
+    .pricing-cols {
+      flex-direction: column;
+      gap: 100px;
+
+      & > div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pricing-first-col {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      .pricing-second-col {
+        width: 100%;
+
+        .page-pricing {
+          height: fit-content;
+        }
+      }
+    }
+    .accessories div {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
 }
+
 @media only screen and (max-width: 1300px) {
   #hero {
     width: 100%;
@@ -27,26 +70,33 @@
       width: 70%;
     }
   }
-}
-@media only screen and (max-width: 1000px) {
-  #hero {
-    .hero-right-col {
-      width: 80%;
+  #contact {
+    .contact-cols {
+      flex-direction: column;
+      gap: 50px;
+
+      padding-left: 50px;
+      padding-right: 50px;
+
+      .contact-left-col,
+      .contact-right-col {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        .contact-info > div {
+          display: flex;
+          justify-content: center;
+        }
+        .faq-content {
+          text-align: left;
+        }
+      }
     }
   }
 }
-@media only screen and (max-width: 750px) {
-  #hero {
-    .hero-right-col {
-      width: 100%;
-    }
-  }
-}
-@media only screen and (max-width: 1050px) {
-  .menu-slide-button {
-    display: block;
-  }
-}
+
 @media only screen and (max-width: 1200px) {
   .services-cards {
     .service-row {
@@ -80,6 +130,21 @@
     }
   }
 }
+
+@media only screen and (max-width: 1050px) {
+  .menu-slide-button {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #hero {
+    .hero-right-col {
+      width: 80%;
+    }
+  }
+}
+
 @media only screen and (max-width: 850px) {
   .services-cards {
     .service-row {
@@ -88,6 +153,53 @@
 
       .card {
         width: 80%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #hero {
+    .hero-right-col {
+      width: 100%;
+    }
+  }
+  #price-list .pricing-cols .pricing-second-col .page-pricing {
+    flex-direction: column;
+
+    .page-pricing-title-desc,
+    .page-pricing-title-desc,
+    .page-pricing-price {
+      width: 100%;
+    }
+    .page-pricing-price {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .page-price {
+        width: fit-content;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #price-list {
+    .accessories-title {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .accessories-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 0px;
+
+      .second-accessories-col {
+        position: relative;
+        top: -7px;
       }
     }
   }
