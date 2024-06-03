@@ -46,7 +46,6 @@ const MainPage: React.FC = () => {
         <div className='hero-right-col'>
           <img src={LaptopImage} alt='laptop' />
         </div>
-        M
       </div>
       <div id='services'>
         <Header title='Nasze usługi' description='Zobacz, z czym możemy Ci pomóc' type='blacked' />
