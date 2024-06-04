@@ -65,13 +65,36 @@ const Valuation: React.FC = () => {
   return (
     <div className='valuation'>
       <MainNavbar isActive={isMenuActive} />
+      <Header
+        title='Otrzymaj automatyczną wycenę'
+        description='Odpowiedz na kilka pytań i sprawdź, ile kosztuje Twoja przyszła witryna'
+        type='blacked'
+      />
       <div className='main-content'>
-        <Header
-          title='Otrzymaj automatyczną wycenę'
-          description='Odpowiedz na kilka pytań i sprawdź, ile kosztuje Twoja przyszła witryna'
-          type='blacked'
-        />
-        {returnStep()}
+        <div className='left-col'>
+          {returnStep()}
+          <div className='movement-buttons'>
+            <div className='previous'>
+              {' '}
+              <span>{'< Wstecz'}</span>
+            </div>
+            <div className='next'>
+              <span>{'Dalej >'}</span>
+            </div>
+          </div>
+        </div>
+        <div className='right-col'>
+          <svg viewBox='0 0 36 36'>
+            <path
+              d='M18 2.0845
+      a 15.9155 15.9155 0 0 1 0 31.831
+      a 15.9155 15.9155 0 0 1 0 -31.831'
+              fill='none'
+              stroke='#444'
+              stroke-width='1'
+            />
+          </svg>
+        </div>
       </div>
       <Footer />
       <IoMenu className='menu-slide-button' onClick={slideButtonClicked} />
