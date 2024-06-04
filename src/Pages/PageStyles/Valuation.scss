@@ -14,46 +14,24 @@ body {
   width: 100%;
   padding-left: 100px;
   padding-right: 100px;
+  margin-bottom: 100px;
 
-  .choose-option-title {
-    font-size: 20px;
+  .option-button {
+    width: 450px;
+    height: 60px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 15px;
     font-weight: bold;
+    transition: 0.6s all;
   }
-  .choose-option-options {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    margin-top: 30px;
-    padding-left: 10px;
-
-    .choose-option-container {
-      color: rgb(80, 80, 80);
-      width: 100%;
-      font-size: 20px;
-      font-weight: bold;
-      font-size: 17px;
-      span {
-        margin-left: 10px;
-      }
-    }
+  .option-button:hover {
+    cursor: pointer;
   }
-  .form-root {
-    width: 100%;
-    display: flex;
-    margin-top: 100px;
-    gap: 50px;
-    .left-col,
-    .right-col {
-      width: 50%;
-      min-height: 600px;
-    }
-    .left-col {
-      .left-col-title {
-        font-size: 18px;
-        color: rgb(60, 60, 60);
-        font-weight: bold;
-      }
-    }
+  .option-button.selected {
+    background-color: black;
+    color: white;
   }
 }
 .menu-slide-button {
@@ -66,6 +44,8 @@ body {
   display: none;
   z-index: 999;
   position: fixed;
+  stroke: black;
+  fill: white;
 }
 .menu-slide-button:hover {
   cursor: pointer;

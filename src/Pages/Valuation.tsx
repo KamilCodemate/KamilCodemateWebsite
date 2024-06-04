@@ -3,93 +3,49 @@ import MainNavbar from '../Components/MainNavbar';
 import Header from '../Components/Header';
 import './PageStyles/Valuation.scss';
 import CreateWebsiteFormBasicsList from '../Components/RequestFolderElements/CreateWebsiteFormBasicsList';
-
+import { MouseEventHandler } from 'react';
+import Footer from '../Components/Footer';
+import { IoMenu } from 'react-icons/io5';
 const Valuation: React.FC = () => {
   const [isMenuActive, activeMenu] = useState(false);
-  const [checkedRadio, setCheckedRadio] = useState('');
+  const [checkedOption, setCheckedOption] = useState<string>('');
   const [step, setStep] = useState<number>(1);
   const slideButtonClicked = () => {
     activeMenu(!isMenuActive);
   };
-  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCheckedRadio(event.target.value);
-    setStep(step + 1);
+  const handleButtonClick: MouseEventHandler<HTMLButtonElement> = (event) => {
+    console.log('dziala');
+    setCheckedOption(event.currentTarget.id);
   };
-
   const ChooseOption = () => {
     return (
       <div className='choose-option-container'>
         <div className='choose-option-title'>Wybierz rodzaj usługi, jaki Cię interesuje:</div>
         <div className='choose-option-options'>
           <div className='choose-option-container'>
-            <input
-              type='radio'
-              id='opt1'
-              className='choose-option-option'
-              name='choose-option-option'
-              value='opt1'
-              onChange={handleRadioChange}
-              checked={checkedRadio === 'opt1'}
-            />
-            <label htmlFor='opt1'>
-              <span>Zbudowanie witryny od podstaw</span>
-            </label>
+            <button id='opt1' className={`option-button ${checkedOption === 'opt1' ? 'selected' : ''}`} onClick={handleButtonClick}>
+              Zbudowanie witryny od podstaw
+            </button>
           </div>
           <div className='choose-option-container'>
-            <input
-              type='radio'
-              id='opt2'
-              className='choose-option-option'
-              name='choose-option-option'
-              value='opt2'
-              onChange={handleRadioChange}
-              checked={checkedRadio === 'opt2'}
-            />
-            <label htmlFor='opt2'>
-              <span>Aktualizacja istniejącej witryny</span>
-            </label>
+            <button id='opt2' className={`option-button ${checkedOption === 'opt2' ? 'selected' : ''}`} onClick={handleButtonClick}>
+              Aktualizacja istniejącej witryny
+            </button>
           </div>
           <div className='choose-option-container'>
-            <input
-              type='radio'
-              id='opt3'
-              className='choose-option-option'
-              name='choose-option-option'
-              value='opt3'
-              onChange={handleRadioChange}
-              checked={checkedRadio === 'opt3'}
-            />
-            <label htmlFor='opt3'>
-              <span>Stała współpraca nad systematyczną modyfikacją istniejącej witryny</span>
-            </label>
+            <button id='opt3' className={`option-button ${checkedOption === 'opt3' ? 'selected' : ''}`} onClick={handleButtonClick}>
+              Stała współpraca nad systematyczną modyfikacją istniejącej witryny
+            </button>
           </div>
           <div className='choose-option-container'>
-            <input
-              type='radio'
-              id='opt4'
-              className='choose-option-option'
-              name='choose-option-option'
-              value='opt4'
-              onChange={handleRadioChange}
-              checked={checkedRadio === 'opt4'}
-            />
-            <label htmlFor='opt4'>
-              <span>Przeprowadzenie kampanii reklamowej do istniejącej witryny</span>
-            </label>
+            <button id='opt4' className={`option-button ${checkedOption === 'opt4' ? 'selected' : ''}`} onClick={handleButtonClick}>
+              Przeprowadzenie kampanii reklamowej do istniejącej witryny
+            </button>
           </div>
           <div className='choose-option-container'>
-            <input
-              type='radio'
-              id='opt5'
-              className='choose-option-option'
-              name='choose-option-option'
-              value='opt5'
-              onChange={handleRadioChange}
-              checked={checkedRadio === 'opt5'}
-            />
-            <label htmlFor='opt5'>
-              <span>Inne</span>
-            </label>
+            <button id='opt5' className={`option-button ${checkedOption === 'opt5' ? 'selected' : ''}`} onClick={handleButtonClick}>
+              Inne
+            </button>
           </div>
         </div>
       </div>
@@ -117,6 +73,8 @@ const Valuation: React.FC = () => {
         />
         {returnStep()}
       </div>
+      <Footer />
+      <IoMenu className='menu-slide-button' onClick={slideButtonClicked} />
     </div>
   );
 };
