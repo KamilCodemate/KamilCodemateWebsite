@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MainNavbar from '../Components/MainNavbar';
 import Header from '../Components/Header';
 import './PageStyles/Valuation.scss';
@@ -7,13 +7,47 @@ import { MouseEventHandler } from 'react';
 import Footer from '../Components/Footer';
 import { IoMenu } from 'react-icons/io5';
 import ChooseOption from './ValuationComponents/ChooseOption';
+import BuildWebsiteSubpages from './ValuationComponents/BuildWebsiteSubpages';
+import BuildWebsiteAppearance from './ValuationComponents/BuildWebsiteAppearance';
+import {useSpring, animated} from 'react-spring';
+
 const Valuation: React.FC = () => {
+
+
+
   const [isMenuActive, activeMenu] = useState(false);
   const [checkedOption, setCheckedOption] = useState<string>('');
   const [percentageIncrease, setPercentageIncrease] = useState<number>(0);
   const [completionPercentage, setCompletionPercentage] = useState<number>(0);
   const [step, setStep] = useState<number>(1);
   const [isActualFilled, setActualFilled] = useState<boolean>(false);
+  const [prevPercentage, setPrevPercentage] = useState(0);
+  const [subpagesContent, setSubpagesContent] = useState<string>('');
+  const [appearanceContent, setAppearanceContent] = useState<string>('');
+  const [appearanceAttachments, setAppearanceAttachments] = useState<File[]>([]);
+
+
+  const handleSubpagesContentChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setSubpagesContent(event.target.value);
+ 
+  }
+  const handleAppearanceContentChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {  
+    setAppearanceContent(event.target.value);
+  
+  }
+
+  const handleAppearanceAttachmentAdd = (files: File[]) => {
+    if (files) {
+      setAppearanceAttachments([...appearanceAttachments, ...Array.from(files)]);
+  }
+  }
+
+
+  useEffect(() => {
+    setPrevPercentage(completionPercentage);
+  }, [completionPercentage]);
+
+
   const slideButtonClicked = () => {
     activeMenu(!isMenuActive);
   };
@@ -23,10 +57,23 @@ const Valuation: React.FC = () => {
 
     switch (event.currentTarget.id) {
       case 'opt1':
-        setPercentageIncrease(100 / 8);
+        setPercentageIncrease(100 / 4);
         break;
+
+      
     }
   };
+  const animatedProps = useSpring({ 
+    to: { strokeDasharray: `${completionPercentage}, 100` }, 
+    from: { strokeDasharray: '0, 100' },
+    config: { duration: 700 }
+  });
+  const numberProps = useSpring({ 
+    to: { number: completionPercentage }, 
+    from: { number: prevPercentage },
+    config: { duration: 700 }
+  });
+
   const handleNextButtonClick = () => {
     if (isActualFilled) {
       console.log('next');
@@ -46,6 +93,19 @@ const Valuation: React.FC = () => {
     switch (step) {
       case 1:
         return <ChooseOption handleButtonClick={handleOptionButtonClick} checkedOption={checkedOption} />;
+
+      case 2: return <BuildWebsiteSubpages content = {subpagesContent} handleContentChange={handleSubpagesContentChange} />;
+
+      case 3:
+  return (
+    <BuildWebsiteAppearance
+      content={appearanceContent}
+      handleContentChange={handleAppearanceContentChange}
+      appearanceAttachments={appearanceAttachments}
+      handleFileAdd={handleAppearanceAttachmentAdd}
+    />
+  );
+
 
       default:
         return <ChooseOption handleButtonClick={handleOptionButtonClick} checkedOption={checkedOption} />;
@@ -78,19 +138,19 @@ const Valuation: React.FC = () => {
             <path
               className='circle-bg'
               d='M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831'
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831'
             />
-            <path
+            <animated.path
               className='circle'
-              stroke-dasharray={`${completionPercentage}, 100`}
+              style={animatedProps}
               d='M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831'
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831'
             />
-            <text x='18' y='20.35' className='percentage'>
-              {Math.round(completionPercentage)}%
-            </text>
+            <animated.text x='18' y='20.35' className='percentage'>
+              {numberProps.number.to(n => `${Math.round(n)}%`)}
+            </animated.text>
           </svg>
           <span>Postęp</span>
         </div>
@@ -100,4 +160,5 @@ const Valuation: React.FC = () => {
     </div>
   );
 };
+
 export default Valuation;
