@@ -11,7 +11,7 @@ const MainNavbar: React.FC<Props> = ({ isActive }) => {
       <div className='navbar-logo'>KamilCodemate</div>
       <div className='navbar-links'>
         <div className='navbar-link'>HOME</div>
-        <div className='navbar-link' onClick={() => {navigate('/KamilCodemateWebsite/valuation')}}>Nasze usługi</div>
+        <div className='navbar-link' onClick={() => {navigate('/valuation')}}>Nasze usługi</div>
         <div className='navbar-link'>Jak to działa</div>
         <div className='navbar-link'>Cennik</div>
         <div className='navbar-link'>Kontakt</div>

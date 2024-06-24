@@ -8,11 +8,11 @@ function App() {
   return (
   
       <div className='App'>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Routes>
-          <Route path='/KamilCodemateWebsite' element={<MainPage />} />
-          <Route path='/KamilCodemateWebsite/request-form' element={<RequestForm />} />
-          <Route path='/KamilCodemateWebsite/valuation' element={<Valuation />} />
+          <Route path='/' element={<MainPage />} />
+          <Route path='/request-form' element={<RequestForm />} />
+          <Route path='/valuation' element={<Valuation />} />
           </Routes>
         </Router>
       </div>
