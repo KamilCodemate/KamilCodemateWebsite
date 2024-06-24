@@ -4,7 +4,7 @@ const Footer: React.FC = () => {
   return (
     <div className='footer'>
       <div className='footer-first-col'>
-        <div className='footer-logo'>InteFuture</div>
+        <div className='footer-logo'>KamilCodemate</div>
         <div className='slogan'>Przyciągniemy do Ciebie uwagę</div>
         <div className='footer-services-root'>
           <div className='footer-services-title'>Usługi</div>
