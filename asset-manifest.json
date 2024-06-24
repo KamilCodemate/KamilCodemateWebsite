@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/KamilCodemateWebsite/static/css/main.da596126.css",
-    "main.js": "/KamilCodemateWebsite/static/js/main.c118ab3c.js",
+    "main.js": "/KamilCodemateWebsite/static/js/main.fb95c4e8.js",
     "static/js/453.a31cbde6.chunk.js": "/KamilCodemateWebsite/static/js/453.a31cbde6.chunk.js",
     "static/media/hero-laptop.jpg": "/KamilCodemateWebsite/static/media/hero-laptop.64ade64570b91dc49be3.jpg",
     "index.html": "/KamilCodemateWebsite/index.html",
     "main.da596126.css.map": "/KamilCodemateWebsite/static/css/main.da596126.css.map",
-    "main.c118ab3c.js.map": "/KamilCodemateWebsite/static/js/main.c118ab3c.js.map",
+    "main.fb95c4e8.js.map": "/KamilCodemateWebsite/static/js/main.fb95c4e8.js.map",
     "453.a31cbde6.chunk.js.map": "/KamilCodemateWebsite/static/js/453.a31cbde6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.da596126.css",
-    "static/js/main.c118ab3c.js"
+    "static/js/main.fb95c4e8.js"
   ]
 }
