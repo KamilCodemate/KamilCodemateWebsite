@@ -1,20 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainPage from './Pages/MainPage';
 import RequestForm from './Pages/RequestForm';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Valuation from './Pages/Valuation';
+
 function App() {
   return (
-    <Router>
+  
       <div className='App'>
-        <Routes>
-          <Route path='/' element={<MainPage />} />
-          <Route path='/request-form' element={<RequestForm />} />
-          <Route path='/valuation' element={<Valuation />} />
-        </Routes>
+        <Router>
+          <Routes>
+          <Route path='/KamilCodemateWebsite' element={<MainPage />} />
+          <Route path='/KamilCodemateWebsite/request-form' element={<RequestForm />} />
+          <Route path='/KamilCodemateWebsite/valuation' element={<Valuation />} />
+          </Routes>
+        </Router>
       </div>
-    </Router>
+   
   );
 }
 
