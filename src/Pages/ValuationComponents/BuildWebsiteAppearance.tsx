@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
 import { CgAttachment } from "react-icons/cg";
+import { GoTrash } from "react-icons/go";
 
 type Props = {
-   content: string,
-   handleContentChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-   appearanceAttachments: File[];
-   handleFileAdd: (files: File[]) => void;
+    content: string,
+    handleContentChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+    appearanceAttachments: File[];
+    handleFileAdd: (files: File[]) => void;
+    handleFileRemove: (index: number) => void;
 };
 
-const BuildWebsiteAppearance: React.FC<Props> = ({ content, handleContentChange, appearanceAttachments, handleFileAdd }) => {
+const BuildWebsiteAppearance: React.FC<Props> = ({ content, handleContentChange, appearanceAttachments, handleFileAdd, handleFileRemove }) => {
     const [signCount, setSignCount] = useState<number>(0);
     const [isDraggingOver, setIsDraggingOver] = useState<boolean>(false);
 
@@ -84,7 +86,10 @@ const BuildWebsiteAppearance: React.FC<Props> = ({ content, handleContentChange,
                 </div>
                 <div className="attachments-list" style={{ overflowY: 'auto', maxHeight: '100px', marginTop: '10px' }}>
                     {appearanceAttachments.map((file, index) => (
-                        <div key={index} className="attachment-name">{file.name}</div>
+                        <div key={index} className="attachment-item">
+                            <span className="attachment-name">{file.name}</span>
+                            <GoTrash className="remove-icon" size={20} onClick={() => handleFileRemove(index)} style={{verticalAlign: 'middle', marginLeft: '5px'}} />
+                        </div>
                     ))}
                 </div>
             </div>

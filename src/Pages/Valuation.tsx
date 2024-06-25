@@ -13,6 +13,7 @@ import { useSpring, animated } from 'react-spring';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import FinalInfo from './ValuationComponents/FinalInfo';
 import 'react-notifications/lib/notifications.css';
+import UpdateWebsiteAddress from './ValuationComponents/UpdateWebsiteAddress';
 
 const Valuation: React.FC = () => {
   const [isMenuActive, activeMenu] = useState(false);
@@ -23,10 +24,13 @@ const Valuation: React.FC = () => {
   const [isActualFilled, setActualFilled] = useState<boolean>(false);
   const [prevPercentage, setPrevPercentage] = useState<number>(0);
   const [subpagesContent, setSubpagesContent] = useState<string>('');
+  const [subpageAttachments, setSubpageAttachments] = useState<File[]>([]);
   const [appearanceContent, setAppearanceContent] = useState<string>('');
   const [appearanceAttachments, setAppearanceAttachments] = useState<File[]>([]);
   const [otherInfoContent, setOtherInfoContent] = useState<string>('');
   const [otherInfoAttachments, setOtherInfoAttachments] = useState<File[]>([]);
+  const [updateWebsiteContent, setUpdateWebsiteContent] = useState<string>('');
+
   const [finalInfo, setFinalInfo] = useState<{ name: string; email: string; telephone: string; agreed: boolean }>({
     name: '',
     email: '',
@@ -42,6 +46,16 @@ const Valuation: React.FC = () => {
     setSubpagesContent(event.target.value);
   };
 
+  const handleSubpageAttachmentAdd = (files: File[]) => {
+    if (files) {
+      setSubpageAttachments([...subpageAttachments, ...Array.from(files)]);
+    }
+  };
+  const handleSubpageAttachmentRemove = (index: number) => {
+    const newAttachments = subpageAttachments.filter((_, i) => i !== index);
+    setSubpageAttachments(newAttachments);
+  };
+
   const handleAppearanceContentChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setAppearanceContent(event.target.value);
   };
@@ -51,11 +65,20 @@ const Valuation: React.FC = () => {
       setAppearanceAttachments([...appearanceAttachments, ...Array.from(files)]);
     }
   };
+  const handleAppearanceAttachementRemove = (index: number) => {
+    const newAttachments = appearanceAttachments.filter((_, i) => i !== index);
+    setAppearanceAttachments(newAttachments);
+  };
 
   const handleOtherInfoAttachmentAdd = (files: File[]) => {
     if (files) {
       setOtherInfoAttachments([...otherInfoAttachments, ...Array.from(files)]);
     }
+  };
+
+  const handleOtherInfoAttachmentRemove = (index: number) => {  
+    const newAttachments = otherInfoAttachments.filter((_, i) => i !== index);
+    setOtherInfoAttachments(newAttachments);
   };
 
   const handleOtherInfoContentChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -70,6 +93,10 @@ const Valuation: React.FC = () => {
     activeMenu(!isMenuActive);
   };
 
+  const handleUpdateWebsiteContentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUpdateWebsiteContent(event.target.value);
+  };
+
   const handleOptionButtonClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
     setCheckedOption(event.currentTarget.id);
     setActualFilled(true);
@@ -78,7 +105,9 @@ const Valuation: React.FC = () => {
       case 'opt1':
         setPercentageIncrease(100 / 4);
         break;
-   
+      case 'opt2':
+        setPercentageIncrease(100 / 3); break;
+      case 'opt3': setPercentageIncrease(100 / 2); break;
     }
   };
 
@@ -146,7 +175,7 @@ const Valuation: React.FC = () => {
     }
   };
 
-  const handlePreviousButtonclick = () => {
+  const handlePreviousButtonClick = () => {
     if (step === 1) return;
     console.log('previous');
     setStep(step - 1);
@@ -154,42 +183,91 @@ const Valuation: React.FC = () => {
   };
 
   const returnStep = () => {
-    switch (step) {
-      case 1:
-        return <ChooseOption handleButtonClick={handleOptionButtonClick} checkedOption={checkedOption} />;
-      case 2:
-        return <BuildWebsiteSubpages content={subpagesContent} handleContentChange={handleSubpagesContentChange} />;
-      case 3:
-        return (
-          <BuildWebsiteAppearance
-            content={appearanceContent}
-            handleContentChange={handleAppearanceContentChange}
-            appearanceAttachments={appearanceAttachments}
-            handleFileAdd={handleAppearanceAttachmentAdd}
-          />
-        );
-      case 4:
-        return (
-          <OtherInfo
-            title='Inne ważne informacje / ogólny opis'
-            content={otherInfoContent}
-            handleContentChange={handleOtherInfoContentChange}
-            appearanceAttachments={otherInfoAttachments}
-            handleFileAdd={handleOtherInfoAttachmentAdd}
-          />
-        );
-      case 5:
-        return (
-          <FinalInfo
-            name={finalInfo.name}
-            email={finalInfo.email}
-            telephone={finalInfo.telephone}
-            agreed={finalInfo.agreed}
-            handleFinalInfoChange={handleFinalInfoChange}
-          />
-        );
-      default:
-        return <ChooseOption handleButtonClick={handleOptionButtonClick} checkedOption={checkedOption} />;
+    if (step === 1) return <ChooseOption handleButtonClick={handleOptionButtonClick} checkedOption={checkedOption} />;
+    if (checkedOption === 'opt1') {
+      switch (step) {
+        case 2:
+          return <BuildWebsiteSubpages content={subpagesContent} handleContentChange={handleSubpagesContentChange} subpageAttachments={subpageAttachments} handleFileAdd={handleSubpageAttachmentAdd} handleFileRemove={handleSubpageAttachmentRemove} />;
+        case 3:
+          return (
+            <BuildWebsiteAppearance
+              content={appearanceContent}
+              handleContentChange={handleAppearanceContentChange}
+              appearanceAttachments={appearanceAttachments}
+              handleFileAdd={handleAppearanceAttachmentAdd}
+              handleFileRemove={handleAppearanceAttachementRemove}
+            />
+          );
+        case 4:
+          return (
+            <OtherInfo
+              title='Inne ważne informacje / ogólny opis'
+              content={otherInfoContent}
+              handleContentChange={handleOtherInfoContentChange}
+              appearanceAttachments={otherInfoAttachments}
+              handleFileAdd={handleOtherInfoAttachmentAdd}
+              handleFileRemove={handleOtherInfoAttachmentRemove}
+            />
+          );
+        case 5:
+          return (
+            <FinalInfo
+              name={finalInfo.name}
+              email={finalInfo.email}
+              telephone={finalInfo.telephone}
+              agreed={finalInfo.agreed}
+              handleFinalInfoChange={handleFinalInfoChange}
+            />
+          );
+        default:
+          return <ChooseOption handleButtonClick={handleOptionButtonClick} checkedOption={checkedOption} />;
+      }
+    }
+    if (checkedOption === 'opt2') {
+      switch (step) {
+        case 2:
+          return <UpdateWebsiteAddress content={updateWebsiteContent} handleContentChange={handleUpdateWebsiteContentChange} />;
+        case 3:   return <OtherInfo
+        title='Opisz dokładnie, co chcesz zmienić na swojej witrynie:'
+        content={otherInfoContent}
+        handleContentChange={handleOtherInfoContentChange}
+        appearanceAttachments={otherInfoAttachments}
+        handleFileAdd={handleOtherInfoAttachmentAdd}
+        handleFileRemove={handleOtherInfoAttachmentRemove}
+      />
+      case 4: return (
+        <FinalInfo
+          name={finalInfo.name}
+          email={finalInfo.email}
+          telephone={finalInfo.telephone}
+          agreed={finalInfo.agreed}
+          handleFinalInfoChange={handleFinalInfoChange}
+        />
+      );
+        default:
+          return <ChooseOption handleButtonClick={handleOptionButtonClick} checkedOption={checkedOption} />;
+      }
+    }
+    if(checkedOption === 'opt3') {  
+      switch(step)
+      {
+        case 2:  return <OtherInfo
+        title='Opisz dokładnie, czego potrzebujesz:'
+        content={otherInfoContent}
+        handleContentChange={handleOtherInfoContentChange}
+        appearanceAttachments={otherInfoAttachments}
+        handleFileAdd={handleOtherInfoAttachmentAdd}
+        handleFileRemove={handleOtherInfoAttachmentRemove}
+      />
+      case 3: return <FinalInfo
+      name={finalInfo.name}
+      email={finalInfo.email}
+      telephone={finalInfo.telephone}
+      agreed={finalInfo.agreed}
+      handleFinalInfoChange={handleFinalInfoChange}
+    />
+      }
+      
     }
   };
 
@@ -206,8 +284,7 @@ const Valuation: React.FC = () => {
           {returnStep()}
           <div className='movement-buttons'>
             <div className='previous'>
-              {' '}
-              <span onClick={handlePreviousButtonclick}>{'< Wstecz'}</span>
+              <span onClick={handlePreviousButtonClick}>{'< Wstecz'}</span>
             </div>
             <div className='next'>
               <span onClick={handleNextButtonClick}>{Math.round(completionPercentage) === 100 ? 'Wyślij' : 'Dalej >'}</span>

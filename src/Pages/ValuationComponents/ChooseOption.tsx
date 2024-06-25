@@ -46,7 +46,7 @@ const ChooseOption: React.FC<Props> = ({ checkedOption, handleButtonClick }) => 
           </button>
         </div> */}
         <div className='choose-option-container'>
-          <button id='opt3' className={`option-button ${checkedOption === 'opt' ? 'selected' : ''}`} onClick={handleButtonClick}>
+          <button id='opt3' className={`option-button ${checkedOption === 'opt3' ? 'selected' : ''}`} onClick={handleButtonClick}>
             Inne
           </button>
         </div>
