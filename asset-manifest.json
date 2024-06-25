@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/KamilCodemateWebsite/static/css/main.dd99f386.css",
-    "main.js": "/KamilCodemateWebsite/static/js/main.f0950c0e.js",
+    "main.css": "/KamilCodemateWebsite/static/css/main.15223bf9.css",
+    "main.js": "/KamilCodemateWebsite/static/js/main.7f79157f.js",
     "static/js/453.a31cbde6.chunk.js": "/KamilCodemateWebsite/static/js/453.a31cbde6.chunk.js",
     "static/media/hero-laptop.jpg": "/KamilCodemateWebsite/static/media/hero-laptop.64ade64570b91dc49be3.jpg",
     "static/media/notification.svg?s3g3t9": "/KamilCodemateWebsite/static/media/notification.5d0158671dd860c714c4.svg",
@@ -9,12 +9,12 @@
     "static/media/notification.woff?s3g3t9": "/KamilCodemateWebsite/static/media/notification.c392cd33d9d9de730f9d.woff",
     "static/media/notification.ttf?s3g3t9": "/KamilCodemateWebsite/static/media/notification.c5d9251ea82e42f75381.ttf",
     "index.html": "/KamilCodemateWebsite/index.html",
-    "main.dd99f386.css.map": "/KamilCodemateWebsite/static/css/main.dd99f386.css.map",
-    "main.f0950c0e.js.map": "/KamilCodemateWebsite/static/js/main.f0950c0e.js.map",
+    "main.15223bf9.css.map": "/KamilCodemateWebsite/static/css/main.15223bf9.css.map",
+    "main.7f79157f.js.map": "/KamilCodemateWebsite/static/js/main.7f79157f.js.map",
     "453.a31cbde6.chunk.js.map": "/KamilCodemateWebsite/static/js/453.a31cbde6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dd99f386.css",
-    "static/js/main.f0950c0e.js"
+    "static/css/main.15223bf9.css",
+    "static/js/main.7f79157f.js"
   ]
 }
