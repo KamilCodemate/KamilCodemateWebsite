@@ -175,4 +175,26 @@ body {
       cursor: pointer;
     }
   }
+  .final-info-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+  
+    input[type='text'], input[type='email'], input[type='tel']{
+      width: 48%;
+      height: 50px;
+      border: 1px solid rgb(200, 200, 200);
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    input[type='checkbox']
+    {
+      margin-right: 10px;
+      
+    }
+  }
 }
