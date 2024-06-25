@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/KamilCodemateWebsite/static/css/main.dd99f386.css",
-    "main.js": "/KamilCodemateWebsite/static/js/main.d166b762.js",
+    "main.js": "/KamilCodemateWebsite/static/js/main.f0950c0e.js",
     "static/js/453.a31cbde6.chunk.js": "/KamilCodemateWebsite/static/js/453.a31cbde6.chunk.js",
     "static/media/hero-laptop.jpg": "/KamilCodemateWebsite/static/media/hero-laptop.64ade64570b91dc49be3.jpg",
     "static/media/notification.svg?s3g3t9": "/KamilCodemateWebsite/static/media/notification.5d0158671dd860c714c4.svg",
@@ -10,11 +10,11 @@
     "static/media/notification.ttf?s3g3t9": "/KamilCodemateWebsite/static/media/notification.c5d9251ea82e42f75381.ttf",
     "index.html": "/KamilCodemateWebsite/index.html",
     "main.dd99f386.css.map": "/KamilCodemateWebsite/static/css/main.dd99f386.css.map",
-    "main.d166b762.js.map": "/KamilCodemateWebsite/static/js/main.d166b762.js.map",
+    "main.f0950c0e.js.map": "/KamilCodemateWebsite/static/js/main.f0950c0e.js.map",
     "453.a31cbde6.chunk.js.map": "/KamilCodemateWebsite/static/js/453.a31cbde6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dd99f386.css",
-    "static/js/main.d166b762.js"
+    "static/js/main.f0950c0e.js"
   ]
 }
