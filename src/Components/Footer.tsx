@@ -1,8 +1,37 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import './ComponentStyles/Footer.scss';
+import {motion, useInView, useAnimation} from 'framer-motion';
+
+const AnimationVariants = {
+  hidden: { opacity: 0, y: 300 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const AnimationTransition = {
+  duration: 0.5,
+  delay: 0.5,
+};
+
+
+
 const Footer: React.FC = () => {
+  const ref = useRef(null);
+const inView = useInView(ref, {once: true});
+const mainControls = useAnimation();
+
+  useEffect(() => {
+    if(inView) {
+      mainControls.start('visible');
+    }
+  }, [inView]);
+  
   return (
-    <div className='footer'>
+    <motion.div ref={ref} className='footer'
+    variants={AnimationVariants}
+    transition={AnimationTransition}
+    initial='hidden'
+    animate={mainControls}
+    >
       <div className='footer-first-col'>
         <div className='footer-logo'>KamilCodemate</div>
         <div className='slogan'>Przyciągniemy do Ciebie uwagę</div>
@@ -33,7 +62,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className='copy'>&copy;InteFuture 2024 - Wszelkie Prawa Zastrzeżone</div>
-    </div>
+    </motion.div>
   );
 };
 
