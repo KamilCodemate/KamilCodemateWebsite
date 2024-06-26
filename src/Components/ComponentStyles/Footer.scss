@@ -93,11 +93,14 @@
 }
 @media only screen and (max-width: 1000px) {
   .footer {
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     height: fit-content;
-    gap: 100px;
+    gap: 50px;
+    text-align: center;
+   
 
     .footer-first-col,
     .footer-second-col {
@@ -109,6 +112,17 @@
         padding-left: 100px;
         align-items: flex-start;
         display: flex;
+      }
+    }
+    .footer-first-col{
+      padding-left: 10px;
+      padding-right: 10px;
+      .footer-services{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0;
       }
     }
     .copy {

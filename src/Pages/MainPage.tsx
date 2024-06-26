@@ -52,22 +52,31 @@ const MainPage: React.FC = () => {
   const [isInitialized, setInitialized] = useState(true);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+  
+    const preventScrolling = () => {
       window.scrollTo(0, 0);
-  }, 100)
-    
+    };
+    window.addEventListener("scroll", preventScrolling);
+    window.scrollTo(0, 0);
+
     setTimeout(() => {
-      window.scrollTo(0, 0);
       setInitialized(false);
-      
     }, 3000);
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       window.scrollTo(0, 0);
-      clearInterval(interval);
+  
+      window.removeEventListener("scroll", preventScrolling);
+     
     }, 4000);
 
-    
+
+    return () => {
+     
+      clearTimeout(timeout);
+      window.removeEventListener("scroll", preventScrolling);
+    };
   }, []);
+
 
 
   const slideButtonClicked = () => {
@@ -232,7 +241,7 @@ const MainPage: React.FC = () => {
                 variants={AnimationVariants}
                 transition={{
                   ...AnimationTransition,
-                  delay: (index * 0.25) + 0.5
+                  delay: (index * 0.25) + 0.5 
                 }}
               >
                 <div className="image-arrow">
@@ -249,8 +258,8 @@ const MainPage: React.FC = () => {
 
         <div id="price-list">
           <Header
-            title="Cennik"
-            description="Zobacz orientacyjne ceny dla Twojej witryny"
+            title="Nasze oferty"
+            description="Przejrzyj nasze oferty i wybierz najlepszą dla Ciebie"
             type="blacked"
           />
           <motion.div
@@ -261,64 +270,7 @@ const MainPage: React.FC = () => {
             variants={AnimationVariants}
             transition={AnimationTransition}
           >
-            <div className="pricing-first-col">
-              <div className="about-product-title">O tym, co kupujesz</div>
-              <div className="about-product-desc">
-                Zamawiając u nas witrynę, otrzymujesz gwarancję niezawodności i
-                jakości. Dla każdego zamówienia otrzymasz bezpłatny pakiet
-                opieki nad Twoją witryną przez 6 miesięcy. Chcesz coś zmienić? -
-                my to wykonujemy.
-              </div>
-              <div className="accessories">
-                <div className="accessories-title">Dla dowolnej witryny: </div>
-                <div className="accessories-content">
-                  <ul className="first-accessories-col">
-                    <li>
-                      <IoMdCheckmarkCircle />
-                      Profesjonalny projekt graficzny
-                    </li>
-                    <li>
-                      <IoMdCheckmarkCircle />
-                      Nieograniczona liczba podstron
-                    </li>
-                    <li>
-                      <IoMdCheckmarkCircle />
-                      Dopasowane zdjęcia
-                    </li>
-                    <li>
-                      <IoMdCheckmarkCircle />
-                      Opracowane teksty
-                    </li>
-                    <li>
-                      <IoMdCheckmarkCircle />
-                      Pełna responsywność
-                    </li>
-                  </ul>
-                  <ul className="second-accessories-col">
-                    <li>
-                      <IoMdCheckmarkCircle />
-                      Formularz kontaktowy
-                    </li>
-                    <li>
-                      <IoMdCheckmarkCircle />
-                      Opieka nad witryną
-                    </li>
-                    <li>
-                      <IoMdCheckmarkCircle />
-                      Gwarancja na okres 24 miesięcy
-                    </li>
-                    <li>
-                      <IoMdCheckmarkCircle />
-                      RODO i ciasteczka
-                    </li>
-                    <li>
-                      <IoMdCheckmarkCircle />
-                      Zaprojektowanie logo
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            
             <div className="pricing-second-col">
               <motion.div
                 className="page-pricing"
@@ -356,21 +308,22 @@ const MainPage: React.FC = () => {
               >
                 <div className="page-pricing-title-desc">
                   <div className="page-pricing-title">Strona z blogiem</div>
-                  <div className="page-pricing-desc">
-                    Zamów stronę z systemami back-end - np. własnym blogiem,
-                    komentarzami, etc.
-                  </div>
-                </div>
-                <div className="page-pricing-price">
+                  <div className="page-pricing-price">
                   <div className="page-price">
-                    <span>
-                      <sub>Od</sub>1550<sup>pln</sup>
-                    </span>
+                   
+                     Od 1550pln
+                  
                   </div>
                   <div className="page-qmark">
                     <HiQuestionMarkCircle />
                   </div>
                 </div>
+                  <div className="page-pricing-desc">
+                    Zamów stronę z systemami back-end - np. własnym blogiem,
+                    komentarzami, etc.
+                  </div>
+                </div>
+              
               </motion.div>
               <motion.div
                 className="page-pricing"
