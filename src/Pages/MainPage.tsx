@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import "./PageStyles/MainPage.scss";
 import "./PageStyles/MediaQueries/MainPageMediaQuery.scss";
 
-import LaptopImage from "../images/hero-laptop.jpg";
-import CurvedArrowImage from "../images/curved-arrow.png";
+import LaptopImage from "../../public/images/hero-laptop.jpg"
+import CurvedArrowImage from "../../public/images/curved-arrow.png";
 
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
@@ -159,7 +159,7 @@ const MainPage: React.FC = () => {
             variants={AnimationVariants}
             transition={AnimationTransitionAdditionalDelay}
           >
-            <img src={LaptopImage} alt="laptop" />
+            <img src={LaptopImage.src} alt="laptop" />
           </motion.div>
         </div>
 
@@ -243,7 +243,7 @@ const MainPage: React.FC = () => {
                         }}
                       >
                         <div className="image-arrow">
-                          <img src={CurvedArrowImage} alt="arrow" />
+                          <img src={CurvedArrowImage.src} alt="arrow" />
                         </div>
                       </motion.div>
                     )}
@@ -301,7 +301,7 @@ const MainPage: React.FC = () => {
                  Strona Internetowa Nowej Generacji - niezwykle szybka, skalowalna, niezależna od motywu, z możliwością dalszej rozbudowy.
                 </div>
                 <div className="advantages">
-               <span><IoMdCheckmark /> Projekt graficzny <br /></span> 
+               <span><IoMdCheckmark />Indywidualny Projekt graficzny <br /></span> 
                <span>  <IoMdCheckmark /> Pisana w nowoczesnych technologiach<br /></span>
                <span> <IoMdCheckmark /> Szybsza niż standardowa witryna WordPress <br /></span>
                 <span><IoMdCheckmark /> Niezależność od motywu<br /></span>
@@ -336,7 +336,7 @@ const MainPage: React.FC = () => {
             </div>
           </motion.div>
         </div>
-
+        
         <div id="contact">
           <Header
             title="Kontakt"
