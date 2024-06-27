@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-
 import "./PageStyles/MainPage.scss";
 import "./PageStyles/MediaQueries/MainPageMediaQuery.scss";
 
@@ -11,7 +10,7 @@ import Header from "../Components/Header";
 import ContactForm from "../Components/ContactForm";
 import ServiceCard from "../Components/ServiceCard";
 import MainNavbar from "../Components/MainNavbar";
-
+import { IoMdCheckmark } from "react-icons/io";
 import { GrContactInfo } from "react-icons/gr";
 import { GoProjectSymlink } from "react-icons/go";
 import { IoCloudUploadOutline } from "react-icons/io5";
@@ -37,50 +36,47 @@ const MainPage: React.FC = () => {
     duration: 0.5,
     delay: 0.5,
   };
+
   const AnimationTransitionAdditionalDelay = {
     duration: 0.5,
     delay: 1,
   };
+
   const AnimationTransitionContainer = {
     duration: 1,
     delay: 4.5,
   };
 
   const ref = useRef(null);
-
-  const [isMenuActive, activeMenu] = useState(false);
+  const [isMenuActive, setMenuActive] = useState(false);
   const [isInitialized, setInitialized] = useState(true);
 
   useEffect(() => {
-  
     const preventScrolling = () => {
       window.scrollTo(0, 0);
     };
+
     window.addEventListener("scroll", preventScrolling);
     window.scrollTo(0, 0);
 
-    setTimeout(() => {
+    const initializationTimeout = setTimeout(() => {
       setInitialized(false);
     }, 3000);
-    const timeout = setTimeout(() => {
+
+    const scrollTimeout = setTimeout(() => {
       window.scrollTo(0, 0);
-  
       window.removeEventListener("scroll", preventScrolling);
-     
     }, 4000);
 
-
     return () => {
-     
-      clearTimeout(timeout);
+      clearTimeout(initializationTimeout);
+      clearTimeout(scrollTimeout);
       window.removeEventListener("scroll", preventScrolling);
     };
   }, []);
 
-
-
   const slideButtonClicked = () => {
-    activeMenu(!isMenuActive);
+    setMenuActive(!isMenuActive);
   };
 
   const useAnimateOnView = () => {
@@ -108,7 +104,7 @@ const MainPage: React.FC = () => {
   const contactRightColAnimation = useAnimateOnView();
 
   return (
-    <div className="container" style={{backgroundColor: 'black'}}>
+    <div className="container" style={{ backgroundColor: "black" }}>
       <AnimatePresence>
         {isInitialized && (
           <motion.h1
@@ -166,6 +162,7 @@ const MainPage: React.FC = () => {
             <img src={LaptopImage} alt="laptop" />
           </motion.div>
         </div>
+
         <div id="services">
           <Header
             title="Nasze usługi"
@@ -203,58 +200,59 @@ const MainPage: React.FC = () => {
             </div>
           </motion.div>
         </div>
+
         <div id="how-it-works">
-  <Header
-    title="Jak to działa?"
-    description="Zobacz, jak wyglądać będzie nasza współpraca"
-    type="whitened"
-  />
-  <div className="steps-root">
-    <div className="steps">
-      {StepsData.map((step, index) => {
-        const IconComponent = step.icon;
-        return (
-          <React.Fragment key={index}>
-            <motion.div
-              className="step"
-              initial="hidden"
-              animate={stepAnimation.controls}
-              ref={stepAnimation.ref}
-              variants={AnimationVariants}
-              transition={{
-                ...AnimationTransition,
-                delay: index * 0.25
-              }}
-            >
-              <div className="step-icon">
-                <IconComponent size={120} color={"white"} />
-              </div>
-              <div className="step-title">{step.title}</div>
-              <div className="step-description">{step.description}</div>
-            </motion.div>
-            {index < StepsData.length - 1 && (
-              <motion.div
-                className="arrow"
-                initial="hidden"
-                animate={arrowAnimation.controls}
-                ref = {arrowAnimation.ref}
-                variants={AnimationVariants}
-                transition={{
-                  ...AnimationTransition,
-                  delay: (index * 0.25) + 0.5 
-                }}
-              >
-                <div className="image-arrow">
-                  <img src={CurvedArrowImage} alt="arrow" />
-                </div>
-              </motion.div>
-            )}
-          </React.Fragment>
-        );
-      })}
-    </div>
-  </div>
-</div>
+          <Header
+            title="Jak to działa?"
+            description="Zobacz, jak wyglądać będzie nasza współpraca"
+            type="whitened"
+          />
+          <div className="steps-root">
+            <div className="steps">
+              {StepsData.map((step, index) => {
+                const IconComponent = step.icon;
+                return (
+                  <React.Fragment key={index}>
+                    <motion.div
+                      className="step"
+                      initial="hidden"
+                      animate={stepAnimation.controls}
+                      ref={stepAnimation.ref}
+                      variants={AnimationVariants}
+                      transition={{
+                        ...AnimationTransition,
+                        delay: index * 0.25,
+                      }}
+                    >
+                      <div className="step-icon">
+                        <IconComponent size={120} color={"white"} />
+                      </div>
+                      <div className="step-title">{step.title}</div>
+                      <div className="step-description">{step.description}</div>
+                    </motion.div>
+                    {index < StepsData.length - 1 && (
+                      <motion.div
+                        className="arrow"
+                        initial="hidden"
+                        animate={arrowAnimation.controls}
+                        ref={arrowAnimation.ref}
+                        variants={AnimationVariants}
+                        transition={{
+                          ...AnimationTransition,
+                          delay: index * 0.25 + 0.5,
+                        }}
+                      >
+                        <div className="image-arrow">
+                          <img src={CurvedArrowImage} alt="arrow" />
+                        </div>
+                      </motion.div>
+                    )}
+                  </React.Fragment>
+                );
+              })}
+            </div>
+          </div>
+        </div>
 
         <div id="price-list">
           <Header
@@ -270,8 +268,7 @@ const MainPage: React.FC = () => {
             variants={AnimationVariants}
             transition={AnimationTransition}
           >
-            
-            <div className="pricing-second-col">
+            <div className="pricing-second-col"> 
               <motion.div
                 className="page-pricing"
                 ref={pagePricingAnimation.ref}
@@ -280,22 +277,42 @@ const MainPage: React.FC = () => {
                 variants={AnimationVariants}
                 transition={AnimationTransition}
               >
-                <div className="page-pricing-title-desc">
-                  <div className="page-pricing-title">Landing Page</div>
-                  <div className="page-pricing-desc">
-                    Pokaż się od najlepszej strony dzięki nowoczesnej stronie
-                    "wizytówce" z formularzem kontaktowym.
-                  </div>
+                <div className="pricing-subcontainer">
+                <div className="page-pricing-title">Strona WordPress</div>
+
+                <div className="page-pricing-desc">
+                Zamów stronę WordPress opartą na wybranym przez Ciebie motywie.
                 </div>
-                <div className="page-pricing-price">
-                  <div className="page-price">
-                    <span>
-                      <sub>Od</sub>850<sup>pln</sup>
-                    </span>
-                  </div>
-                  <div className="page-qmark">
-                    <HiQuestionMarkCircle />
-                  </div>
+                <span className="price">Od 649 zł</span>
+                </div>
+              </motion.div>
+              <motion.div
+                className="page-pricing main-page-pricing"
+                ref={pagePricingAnimation.ref}
+                initial="hidden"
+                animate={pagePricingAnimation.controls}
+                variants={AnimationVariants}
+                transition={AnimationTransition}
+              >
+                 <div className="pricing-subcontainer">
+                <div className="page-pricing-title">Strona SPA pisana w kodzie</div>
+
+                <div className="page-pricing-desc">
+                 Strona Internetowa Nowej Generacji - niezwykle szybka, skalowalna, niezależna od motywu, z możliwością dalszej rozbudowy.
+                </div>
+                <div className="advantages">
+               <span><IoMdCheckmark /> Projekt graficzny <br /></span> 
+               <span>  <IoMdCheckmark /> Pisana w nowoczesnych technologiach<br /></span>
+               <span> <IoMdCheckmark /> Szybsza niż standardowa witryna WordPress <br /></span>
+                <span><IoMdCheckmark /> Niezależność od motywu<br /></span>
+                <span><IoMdCheckmark /> Mniejsze obiążenie serwera dzięki RestAPI <br /></span>
+               <span><IoMdCheckmark /> Możliwość łatwej rozbudowy <br /></span>
+               <span><IoMdCheckmark /> Kod źródłowy i dokumetacja<br /></span>
+               </div>
+               <div className="price">
+               <span>Od</span>  1550zł
+                </div>
+                
                 </div>
               </motion.div>
               <motion.div
@@ -306,54 +323,20 @@ const MainPage: React.FC = () => {
                 variants={AnimationVariants}
                 transition={AnimationTransition}
               >
-                <div className="page-pricing-title-desc">
-                  <div className="page-pricing-title">Strona z blogiem</div>
-                  <div className="page-pricing-price">
-                  <div className="page-price">
-                   
-                     Od 1550pln
-                  
-                  </div>
-                  <div className="page-qmark">
-                    <HiQuestionMarkCircle />
-                  </div>
+                 <div className="pricing-subcontainer">
+                <div className="page-pricing-title">Sklep Internetowy</div>
+
+                <div className="page-pricing-desc">
+                   Tworzymy każdy rodzaj aplikacji internetowej dla Ciebie - sklep, blog, serwis ze wszystkim, czego potrzebuje Twój biznes.
                 </div>
-                  <div className="page-pricing-desc">
-                    Zamów stronę z systemami back-end - np. własnym blogiem,
-                    komentarzami, etc.
-                  </div>
-                </div>
-              
-              </motion.div>
-              <motion.div
-                className="page-pricing"
-                ref={pagePricingAnimation.ref}
-                initial="hidden"
-                animate={pagePricingAnimation.controls}
-                variants={AnimationVariants}
-                transition={AnimationTransition}
-              >
-                <div className="page-pricing-title-desc">
-                  <div className="page-pricing-title">Sklep internetowy</div>
-                  <div className="page-pricing-desc">
-                    Rozpocznij swój biznes z własnym sklepem internetowym
-                    dostosowanym do Twoich potrzeb.
-                  </div>
-                </div>
-                <div className="page-pricing-price">
-                  <div className="page-price">
-                    <span>
-                      <sub>Od</sub>5500<sup>pln</sup>
-                    </span>
-                  </div>
-                  <div className="page-qmark">
-                    <HiQuestionMarkCircle />
-                  </div>
+               
+                <span>Od 1550pln</span>
                 </div>
               </motion.div>
             </div>
           </motion.div>
         </div>
+
         <div id="contact">
           <Header
             title="Kontakt"
@@ -370,9 +353,10 @@ const MainPage: React.FC = () => {
           >
             <div className="contact-left-col">
               <div className="main-desc">
-                Zadaj pytanie, a odpowiemy najszyciej jak możemy na podany przez
-                Ciebie w formularzu adres e-mail. Jeżeli szukasz bezpłatnej
-                wyceny swojej witryny zrób to przez osobny FORMULARZ WYCENY.
+                Zadaj pytanie, a odpowiemy najszybciej jak możemy na podany
+                przez Ciebie w formularzu adres e-mail. Jeżeli szukasz
+                bezpłatnej wyceny swojej witryny zrób to przez osobny FORMULARZ
+                WYCENY.
               </div>
               <div className="contact-info">
                 <div className="contact-info-title">Dane kontaktowe:</div>
@@ -407,6 +391,7 @@ const MainPage: React.FC = () => {
             </div>
           </motion.div>
         </div>
+
         <Footer />
         <IoMenu className="menu-slide-button" onClick={slideButtonClicked} />
       </motion.div>

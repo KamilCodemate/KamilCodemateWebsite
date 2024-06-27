@@ -187,37 +187,43 @@
    
    
     .pricing-second-col {
-      padding-top: 20px;
-      padding-bottom: 50px;
      flex-direction: row;
-      gap: 30px;
+      display: flex;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       background: white;
       background-image: radial-gradient(black 1px, transparent 0);
-      background-size: 40px 40px;
+      background-size: 30px 40px;
       background-position: -19px -19px;
-     
+      gap: 50px;
+      
       .page-pricing {
         display: flex;
         flex-direction: column;
-        width: 300px;
+        width: 400px;
         min-height: 600px;
         height: fit-content;
         border: 2px solid rgb(99, 99, 99);
-        background-color: white;
         
-      
+        border-radius: 10px;
+        padding: 20px 15px 0 15px;
+        position: relative;
+        z-index: 100;
+        background-color: rgb(241, 243, 255);
         
-        padding-top: 10px;
-        .page-pricing-title-desc {
-          width: 100%;
-         
+     
+        .pricing-subcontainer
+        {
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          height: 100%;
+         
+          position: relative;
+          z-index: 100;
+          width: 100%;
+          
           .page-pricing-title {
             font-size: 25px;
             color: rgb(99, 99, 99);
@@ -235,34 +241,93 @@
             text-align: center;
             
           }
-        }
-        .page-pricing-price {
-          width: 40%;
-          display: flex;
-
-          .page-price {
-            width: 100%;
-            height: 100%;
+          .advantages{
+            margin-top: 20px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
+            flex-direction: column;
+            font-size: 15px;
+            gap: 15px;
+      
             font-weight: bold;
-
-           
+            color: rgb(99, 99, 99);
+            svg{
+              vertical-align: middle;
+              font-size: 17px;
+              fill: green;
+              margin-right: 3px;
+              }
           }
-          .page-qmark {
-            width: 20%;
-            height: 100%;
+          .price{
+            
+            margin-top: 45px;
             font-size: 30px;
-
-            svg:hover {
-              cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+           
+            span{
+            
+              font-size: 18px;
             }
           }
         }
+      
       }
+      .page-pricing.main-page-pricing {
+        
+        overflow: hidden;
+        width: 430px;
+        height: 650px;
+        z-index: 100;
+        position: relative; 
+        border: none;
+        padding: 5px;
+        &::before {
+          
+            content: "";
+            display: block;
+            background: linear-gradient(90deg, hsla(197, 100%, 64%, 1) 0%, hsla(339, 100%, 55%, 1) 100%);
+            height: 200%; 
+            width: 300%; 
+            position: absolute;
+            top: -40%;
+            left: -50%;
+    
+            transform: translate(-50%, -50%); 
+            animation: rotate 8s linear infinite;
+            z-index: -1;
+            transform-origin: center;
+            border-radius: 50%;
+        }
+    
+        @keyframes rotate {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    
+        .pricing-subcontainer {
+          background-color: white;
+            padding: 25px;
+            background-color: rgb(241, 243, 255);
+            color: black;
+            border-radius: 10px;
+            margin: 0;
+        }
     }
+    
+    
+    }
+  
+ 
+    
+   
+    
+
+    
+    
   }
 }
 #contact {
